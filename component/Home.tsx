@@ -5,7 +5,10 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>uilab demo</title>
+        <title>U{'&'}I Lab Demo</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta charSet="utf-8" />
+        <link rel="icon" type="image/png" href="/logo.png" />
       </Head>
 
       <main>
