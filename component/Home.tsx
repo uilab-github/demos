@@ -1,5 +1,7 @@
+import React from 'react';
 import { NextPage } from 'next';
 import Head from 'next/head';
+import HomeContent from '../post/homeContent.mdx';
 
 const Home: NextPage = () => {
   return (
@@ -12,7 +14,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <h1>Hello World</h1>
+        <HomeContent />
       </main>
 
       <footer></footer>
