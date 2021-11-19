@@ -1,0 +1,29 @@
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: 5rem;
+  font-size: 13px;
+  background-color: rgba(5, 56, 134);
+  color: white;
+}
+
+.footerInliner {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 30px;
+}
+
+.editLink:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 1000px) {
+  .footerInliner {
+    width: 1000px;
+  }
+}

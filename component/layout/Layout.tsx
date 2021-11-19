@@ -1,5 +1,6 @@
 import CustomHead from './CustomHead';
 import TopNavBar from './TopNavBar';
+import Footer from './Footer';
 import classes from './Layout.module.css';
 
 const Layout = ({
@@ -14,6 +15,7 @@ const Layout = ({
       <CustomHead title={title} />
       <TopNavBar />
       <main className={classes.main}>{children}</main>
+      <Footer />
     </div>
   );
 };
