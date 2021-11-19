@@ -1,0 +1,13 @@
+.link {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}
+
+.span {
+  margin-left: 3px;
+}
+
+.span:hover {
+  text-decoration: underline;
+}
