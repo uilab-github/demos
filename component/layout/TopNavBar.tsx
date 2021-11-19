@@ -15,11 +15,11 @@ const TopNavBar = () => {
           </div>
         </div>
         <ul>
-          <TopNavElement name="github" link="https://github.com/jaimeenahn">
-            <GithubIcon />
-          </TopNavElement>
-          <TopNavElement name="paper" link="https://arxiv.org/abs/2109.05704">
+          <TopNavElement name="Paper" link="https://arxiv.org/abs/2109.05704">
             <PaperIcon />
+          </TopNavElement>
+          <TopNavElement name="Code" link="https://github.com/jaimeenahn">
+            <GithubIcon />
           </TopNavElement>
         </ul>
       </div>

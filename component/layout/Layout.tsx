@@ -1,5 +1,6 @@
 import CustomHead from './CustomHead';
 import TopNavBar from './TopNavBar';
+import classes from './Layout.module.css';
 
 const Layout = ({
   title,
@@ -9,10 +10,10 @@ const Layout = ({
   children: React.ReactNode;
 }) => {
   return (
-    <div>
+    <div className={classes.layout}>
       <CustomHead title={title} />
       <TopNavBar />
-      <main>{children}</main>
+      <main className={classes.main}>{children}</main>
     </div>
   );
 };
