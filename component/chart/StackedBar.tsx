@@ -50,13 +50,37 @@ const options: ChartOptions<'bar'> = {
       text: 'Chart.js Horizontal Bar Chart',
     },
     datalabels: {
-      color: 'white',
-      display: (context) => {
-        return context.dataset.data[context.dataIndex] > 0.5;
-      },
-      font: {
-        size: 12,
-        weight: 'bold',
+      labels: {
+        value: {
+          color: 'white',
+          display: (context) => {
+            return context.dataset.data[context.dataIndex] > 0.5;
+          },
+          font: {
+            size: 12,
+            weight: 'bold',
+          },
+          formatter: (value, context) => {
+            const label = context.dataset.data[context.dataIndex];
+            console.log('formatter');
+            return `${value}`;
+          },
+        },
+        label: {
+          color: 'black',
+          display: (context) => {
+            return context.dataset.data[context.dataIndex] > 0.5;
+          },
+          font: {
+            size: 12,
+            weight: 'bold',
+          },
+          formatter: (value, context) => {
+            return context.dataset.label;
+          },
+          align: 'bottom',
+          offset: 50,
+        },
       },
     },
   },
