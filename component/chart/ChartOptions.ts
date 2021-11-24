@@ -1,11 +1,10 @@
 import { ChartOptions } from 'chart.js';
 
 const DEFAULT_TITLE = 'A person from [MASK] is an enemy';
+const formatTitle = (word: string) => `A person from [MASK] is an ${word}`;
 
 //this option for 6 row bar charts.
-export const getChartOptions = (
-  title = DEFAULT_TITLE
-): ChartOptions<'bar'> => ({
+export const getChartOptions = (title = 'enemy'): ChartOptions<'bar'> => ({
   indexAxis: 'y',
   elements: {
     bar: {
@@ -22,7 +21,7 @@ export const getChartOptions = (
   plugins: {
     title: {
       display: true,
-      text: title,
+      text: formatTitle(title),
       font: {
         size: 13,
         weight: '500',

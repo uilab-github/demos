@@ -1,4 +1,13 @@
-import { NationDistribution } from './chart/NationUtil';
+import { NationDistribution } from '../component/chart/NationUtil';
+import rawData from './data.json';
+
+export interface DataFormat {
+  [mask: string]: {
+    [language: string]: NationDistribution;
+  };
+}
+
+export const REAL_DATA: DataFormat = rawData;
 
 export const MOCK_DATA = {
   EN: {
