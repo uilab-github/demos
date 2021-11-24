@@ -15,7 +15,7 @@ export const generateChartData = (
   };
 };
 
-// sort -> combineMinorsToOthers
+// sort -> combineMinorsToOthers -> changeCountryNameToAbbr
 const preprocessChartData = (
   data: Record<string, NationDistribution>
 ): Record<string, NationDistribution> => {
@@ -43,24 +43,18 @@ const sortCountries = (
     .sort(([, a], [, b]) => {
       return !reversed ? a - b : b - a;
     })
-    .reduce((accum, [k, v]) => ({ ...accum, [k]: v }), {});
+    .reduce((accum, [nation, ratio]) => ({ ...accum, [nation]: ratio }), {});
 };
 
 const combineMinorsToOthers = (
   distribution: NationDistribution,
   threshold = 0.05
 ): NationDistribution => {
-  const ret: NationDistribution = Object.entries(distribution).reduce(
-    (accum, [k, v]) => {
-      if (v < threshold) {
-        return { ...accum, Others: (accum['Others'] || 0) + v };
-      } else {
-        return { ...accum, [k]: v };
-      }
-    },
-    {}
-  );
-  ret['Others'] = Math.round(ret['Others'] * 100) / 100;
+  const ret: NationDistribution = Object.entries(distribution)
+    .filter(([_, ratio]) => ratio >= threshold)
+    .reduce((accum, [nation, ratio]) => ({ ...accum, [nation]: ratio }), {});
+  const othersValue = 1 - Object.values(ret).reduce((a, b) => a + b);
+  ret['Others'] = Math.round(othersValue * 100) / 100;
   return ret;
 };
 
@@ -71,7 +65,7 @@ const changeCountryNameToAbbr = (
     .map(([nation, ratio]) => {
       return [getAbbrNameFromNation(nation), ratio];
     })
-    .reduce((accum, [k, v]) => ({ ...accum, [k]: v }), {});
+    .reduce((accum, [nation, ratio]) => ({ ...accum, [nation]: ratio }), {});
 };
 
 const generateChartLabels = (data: Record<string, NationDistribution>) => {
