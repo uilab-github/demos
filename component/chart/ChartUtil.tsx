@@ -5,6 +5,36 @@ import {
 } from './NationUtil';
 import { ChartData, ChartDataset } from 'chart.js';
 
+export const generateChartData = (
+  rawData: Record<string, NationDistribution>
+): ChartData<'bar'> => {
+  const refinedData = preprocessChartData(rawData);
+  return {
+    labels: generateChartLabels(refinedData),
+    datasets: generateChartDatasets(refinedData),
+  };
+};
+
+// sort -> combineMinorsToOthers
+const preprocessChartData = (
+  data: Record<string, NationDistribution>
+): Record<string, NationDistribution> => {
+  return Object.entries<NationDistribution>(data)
+    .map(([language, nationDistribution]) => {
+      const refinedDistribution = changeCountryNameToAbbr(
+        combineMinorsToOthers(sortCountries(nationDistribution, true))
+      );
+      return { [language]: refinedDistribution };
+    })
+    .reduce(
+      (accum, entry) => ({
+        ...accum,
+        [Object.keys(entry)[0]]: Object.values(entry)[0],
+      }),
+      {}
+    );
+};
+
 const sortCountries = (
   distribution: NationDistribution,
   reversed = false
@@ -42,36 +72,6 @@ const changeCountryNameToAbbr = (
       return [getAbbrNameFromNation(nation), ratio];
     })
     .reduce((accum, [k, v]) => ({ ...accum, [k]: v }), {});
-};
-
-export const generateChartData = (
-  rawData: Record<string, NationDistribution>
-): ChartData<'bar'> => {
-  const refinedData = preprocessChartData(rawData);
-  return {
-    labels: generateChartLabels(refinedData),
-    datasets: generateChartDatasets(refinedData),
-  };
-};
-
-// sort -> combineMinorsToOthers
-const preprocessChartData = (
-  data: Record<string, NationDistribution>
-): Record<string, NationDistribution> => {
-  return Object.entries<NationDistribution>(data)
-    .map(([language, nationDistribution]) => {
-      const refinedDistribution = changeCountryNameToAbbr(
-        combineMinorsToOthers(sortCountries(nationDistribution, true))
-      );
-      return { [language]: refinedDistribution };
-    })
-    .reduce(
-      (accum, entry) => ({
-        ...accum,
-        [Object.keys(entry)[0]]: Object.values(entry)[0],
-      }),
-      {}
-    );
 };
 
 const generateChartLabels = (data: Record<string, NationDistribution>) => {
