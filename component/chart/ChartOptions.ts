@@ -1,7 +1,12 @@
 import { ChartOptions } from 'chart.js';
+import { classifyArticle } from 'english-article-classifier';
 
 const DEFAULT_TITLE = 'A person from [MASK] is an enemy';
-const formatTitle = (word: string) => `A person from [MASK] is an ${word}`;
+const formatTitle = (word: string) => {
+  const article =
+    classifyArticle(word).type !== 'unknown' ? classifyArticle(word).type : '';
+  return `A person from [MASK] is ${article} ${word}`;
+};
 
 //this option for 6 row bar charts.
 export const getChartOptions = (title = 'enemy'): ChartOptions<'bar'> => ({
@@ -45,7 +50,7 @@ export const getChartOptions = (title = 'enemy'): ChartOptions<'bar'> => ({
           },
           formatter: (value, context) => {
             const label = context.dataset.data[context.dataIndex];
-            return `${value}`;
+            return `${value.toFixed(2)}`;
           },
         },
         label: {
