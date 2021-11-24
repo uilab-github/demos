@@ -34,8 +34,8 @@
   margin-left: 3rem;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   .content {
-    width: 800px;
+    width: 900px;
   }
 }

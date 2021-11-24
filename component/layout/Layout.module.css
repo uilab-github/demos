@@ -13,8 +13,8 @@
   padding: 1rem 2rem;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   .main {
-    width: 800px;
+    width: 900px;
   }
 }

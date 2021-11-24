@@ -1,7 +1,14 @@
-import { NationDistribution, getColorOfNation } from './NationUtil';
+import {
+  NationDistribution,
+  getAbbrNameFromNation,
+  getColorOfNationAbbr,
+} from './NationUtil';
 import { ChartData, ChartDataset } from 'chart.js';
 
-const sortCountries = (distribution: NationDistribution, reversed = false) => {
+const sortCountries = (
+  distribution: NationDistribution,
+  reversed = false
+): NationDistribution => {
   return Object.entries<number>(distribution)
     .sort(([, a], [, b]) => {
       return !reversed ? a - b : b - a;
@@ -12,7 +19,7 @@ const sortCountries = (distribution: NationDistribution, reversed = false) => {
 const combineMinorsToOthers = (
   distribution: NationDistribution,
   threshold = 0.05
-) => {
+): NationDistribution => {
   const ret: NationDistribution = Object.entries(distribution).reduce(
     (accum, [k, v]) => {
       if (v < threshold) {
@@ -27,6 +34,16 @@ const combineMinorsToOthers = (
   return ret;
 };
 
+const changeCountryNameToAbbr = (
+  distribution: NationDistribution
+): NationDistribution => {
+  return Object.entries<number>(distribution)
+    .map(([nation, ratio]) => {
+      return [getAbbrNameFromNation(nation), ratio];
+    })
+    .reduce((accum, [k, v]) => ({ ...accum, [k]: v }), {});
+};
+
 export const generateChartData = (
   rawData: Record<string, NationDistribution>
 ): ChartData<'bar'> => {
@@ -37,13 +54,14 @@ export const generateChartData = (
   };
 };
 
+// sort -> combineMinorsToOthers
 const preprocessChartData = (
   data: Record<string, NationDistribution>
 ): Record<string, NationDistribution> => {
   return Object.entries<NationDistribution>(data)
     .map(([language, nationDistribution]) => {
-      const refinedDistribution = combineMinorsToOthers(
-        sortCountries(nationDistribution, true)
+      const refinedDistribution = changeCountryNameToAbbr(
+        combineMinorsToOthers(sortCountries(nationDistribution, true))
       );
       return { [language]: refinedDistribution };
     })
@@ -86,7 +104,7 @@ const generateChartDataset = (
     dataArray[languageIndex] = ratio;
     return {
       label: nation,
-      backgroundColor: getColorOfNation(nation),
+      backgroundColor: getColorOfNationAbbr(nation),
       data: dataArray,
     };
   });

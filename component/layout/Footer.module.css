@@ -22,8 +22,8 @@
   text-decoration: underline;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 900px) {
   .footerInliner {
-    width: 1000px;
+    width: 900px;
   }
 }

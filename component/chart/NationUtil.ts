@@ -67,9 +67,44 @@ const NATIONS_ARRAY = [
   'Others',
 ];
 
-// export interface typedObject<Type> {
-//   [key: string]: Type;
-// }
+const NATIONS_TO_ABBR = {
+  America: 'America',
+  Canada: 'Canada',
+  Japan: 'Japan',
+  China: 'China',
+  Korea: 'Korea',
+  England: 'England',
+  France: 'France',
+  Germany: 'Germany',
+  Mexico: 'Mexico',
+  Iraq: 'Iraq',
+  Ireland: 'Ireland',
+  Iran: 'Iran',
+  Saudi: 'Saudi',
+  Russia: 'Russia',
+  Vietnam: 'Vietnam',
+  Thailand: 'Thailand',
+  Australia: 'Australia',
+  Spain: 'Spain',
+  Turkey: 'Turkey',
+  Israel: 'Israel',
+  Italy: 'Italy',
+  Egypt: 'Egypt',
+  Somalia: 'Somalia',
+  India: 'India',
+  Brazil: 'Brazil',
+  Colombia: 'Colombia',
+  Greece: 'Greece',
+  Afghanistan: 'Afghan',
+  Cuba: 'Cuba',
+  Syria: 'Syria',
+  Others: 'Others',
+};
+
+const ABBR_TO_NATIONS = Object.keys(NATIONS_TO_ABBR).reduce((accum, nation) => {
+  accum[NATIONS_TO_ABBR[nation]] = nation;
+  return accum;
+}, {});
 
 const toRGBString = (r: number, g: number, b: number) => {
   return `rgb(${r}, ${g}, ${b})`;
@@ -134,6 +169,27 @@ export const getColorOfNation = (name: string): string => {
     return toRGBString(0, 0, 0);
   }
   return NATIONS_TO_COLOR[name];
+};
+
+export const getColorOfNationAbbr = (abbr: string): string => {
+  if (!(abbr in ABBR_TO_NATIONS)) {
+    return toRGBString(0, 0, 0);
+  }
+  return getColorOfNation(getNationFromAbbr(abbr));
+};
+
+export const getAbbrNameFromNation = (name: string): string => {
+  if (!(name in NATIONS_MAP)) {
+    return '';
+  }
+  return NATIONS_TO_ABBR[name];
+};
+
+export const getNationFromAbbr = (abbr: string): string => {
+  if (!(abbr in ABBR_TO_NATIONS)) {
+    return '';
+  }
+  return ABBR_TO_NATIONS[abbr];
 };
 
 // const NATIONS = {
