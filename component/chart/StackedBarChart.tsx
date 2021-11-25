@@ -3,6 +3,12 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { DataFormat } from 'data/DataLoader';
 import { generateChartData } from './ChartUtil';
 import { getChartOptions } from './ChartOptions';
+import { REAL_DATA } from 'data/DataLoader';
+
+const defaultStackedBar = {
+  data: REAL_DATA,
+  mask: 'enemy',
+};
 
 export const StackedBar = ({
   data,
@@ -11,11 +17,13 @@ export const StackedBar = ({
   data: DataFormat;
   mask: string;
 }) => {
-  const languageDistributions = data[mask];
+  const _data = data !== undefined ? data : defaultStackedBar.data;
+  const _mask = mask !== undefined ? mask : defaultStackedBar.mask;
+  const languageDistributions = _data[_mask];
   return (
     <Bar
       data={generateChartData(languageDistributions)}
-      options={getChartOptions(mask)}
+      options={getChartOptions(_mask)}
       plugins={[ChartDataLabels]}
     />
   );
