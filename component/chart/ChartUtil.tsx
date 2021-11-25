@@ -2,6 +2,7 @@ import {
   NationDistribution,
   getAbbrNameFromNation,
   getColorOfNationAbbr,
+  getNations,
 } from './NationUtil';
 import { ChartData, ChartDataset } from 'chart.js';
 
@@ -9,9 +10,12 @@ export const generateChartData = (
   rawData: Record<string, NationDistribution>
 ): ChartData<'bar'> => {
   const refinedData = preprocessChartData(rawData);
+  const labels = generateChartLabels(refinedData);
+  const datasets = generateChartDatasets(refinedData);
+  const paddingData = generatePaddingData(labels.length);
   return {
-    labels: generateChartLabels(refinedData),
-    datasets: generateChartDatasets(refinedData),
+    labels: labels,
+    datasets: [...paddingData, ...datasets],
   };
 };
 
@@ -102,4 +106,17 @@ const generateChartDataset = (
       data: dataArray,
     };
   });
+};
+
+// These padding data for smooth animation,
+// TODO: sync getAbbrNameFromNation in changeCountryNameToAbbr
+const generatePaddingData = (
+  columnCount: number
+): ChartDataset<'bar', number[]>[] => {
+  const nations = getNations();
+  const zeroArray: number[] = new Array(nations.length).fill(0);
+  return nations.map((nation) => ({
+    label: getAbbrNameFromNation(nation),
+    data: zeroArray,
+  }));
 };

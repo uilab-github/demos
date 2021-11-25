@@ -46,7 +46,7 @@ export const StackedBar = ({
 
   useEffect(() => {
     const _languageDistributions = _data[_attribute];
-    setLanguageDistributions(() => _languageDistributions);
+    setLanguageDistributions(_languageDistributions);
   }, [_data, _attribute]);
 
   return (
@@ -60,6 +60,7 @@ export const StackedBar = ({
         data={generateChartData(languageDistributions)}
         options={getChartOptions(_attribute)}
         plugins={[ChartDataLabels]}
+        // redraw={true} This option for redraw all the chart
       />
     </>
   );
