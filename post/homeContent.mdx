@@ -1,18 +1,70 @@
 import { StackedBar } from '../component/chart/StackedBarChart';
 import { REAL_DATA } from 'data/DataLoader';
+import Image from 'next/image';
 
 # Mitigating Language-Dependent Ethnic Bias in BERT
 
-## Lorem Ipsum
+BERT and other large-scale language models (LMs) contain gender and racial bias. They also exhibit other dimensions of social bias, most of which have not been studied in depth, and some of which vary depending on the language.
 
-### Lorem Ipsum
+In this paper, we study **ethnic bias** and how it varies across languages by **analyzing and mitigating ethnic bias** in monolingual BERT for English, German, Spanish, Korean, Turkish, and Chinese.
 
-#### Lorem Ipsum
+Then we propose two methods for mitigation; first using a multilingual model, and second using contextual word alignment of two monolingual models. We compare our proposed methods with monolingual BERT and show that these methods effectively alleviate the ethnic bias.
 
-##### Lorem Ipsum
+<br />
 
-###### Lorem Ipsum
+## Measuring Ethnic Bias
 
----
+We define ethnic bias in BERT as the degree of variance of the probability of a country name given an attribute in a sentence without any relevant clues.
 
 <StackedBar />
+
+We formally define normalized probability used in our ethnic bias metric.
+The metric is based on the change-of-probability of the target words given the presence or absence of an attribute word.
+This normalized probability does not measure the probability of a word occurring, but rather measures the association between the target and the attribute indirectly.
+
+For example, given the sentence template “People from [mask] is an [attribute]," the probability of various ethnicity words to replace [mask] should follow the prior probabilities of those words and not vary significantly depending on the attribute.
+_If a model predicts more uniform normalized probabilities to all target groups, the model's ethnic bias is lower._
+
+<br />
+
+## Mitigation Result
+
+We define ethnic bias in BERT as the degree of variance of the probability of a country name given an attribute in a sentence without any relevant clues.
+
+<StackedBar />
+
+We formally define normalized probability used in our ethnic bias metric.
+The metric is based on the change-of-probability of the target words given the presence or absence of an attribute word.
+This normalized probability does not measure the probability of a word occurring, but rather measures the association between the target and the attribute indirectly.
+
+For example, given the sentence template “People from [mask] is an [attribute]," the probability of various ethnicity words to replace [mask] should follow the prior probabilities of those words and not vary significantly depending on the attribute.
+_If a model predicts more uniform normalized probabilities to all target groups, the model's ethnic bias is lower._
+
+<br />
+
+## Final Demo
+
+<br />
+<Image alt="Demo position" src="/worldmap.jpg" width={800} height={400} />
+
+<br />
+<br />
+<br />
+
+## Conclusion & Future Work
+
+In this paper, we study language-dependent ethnic biases in BERT.
+To first quantify ethnic bias, we introduced the category bias (CB) score.
+
+We show the language-dependent nature of ethnic bias, and then we proposed two mitigation strategies: multilingual model and contextual word alignment with English, which has the lowest CB score.
+For resource-rich languages, the multilingual model alone can mitigate the bias, or fine-tuning the multilingual model can effectively decrease the bias.
+For all languages, the alignment approach reduces bias and is a better solution for low-resource languages.
+
+<br />
+
+## Acknowledgement
+
+This work has been financially supported by the Engineering Research Center Program through the National Research Foundation of Korea (NRF) funded by the Korean Government MSIT (NRF2018R1A5A1059921)
+
+<br />
+<br />
