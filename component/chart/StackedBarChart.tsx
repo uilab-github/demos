@@ -51,16 +51,17 @@ export const StackedBar = ({
 
   return (
     <>
-      <AttrRadioOption
-        data={maskList}
-        attribute={_attribute}
-        onChange={onAttributeChange}
-      />
       <Bar
         data={generateChartData(languageDistributions)}
         options={getChartOptions(_attribute)}
         plugins={[ChartDataLabels]}
         // redraw={true} This option for redraw all the chart
+      />
+      <br />
+      <AttrRadioOption
+        data={maskList}
+        attribute={_attribute}
+        onChange={onAttributeChange}
       />
     </>
   );

@@ -133,7 +133,7 @@ const NATIONS_TO_COLOR = {
   Israel: toRGBString(243, 122, 45),
   Italy: toRGBString(167, 191, 225),
   Egypt: toRGBString(52, 164, 44),
-  Somalia: toRGBString(36, 117, 180),
+  Somalia: toRGBString(65, 137, 221),
   India: toRGBString(253, 125, 19),
   Brazil: toRGBString(139, 92, 78),
   Colombia: toRGBString(41, 36, 120),
