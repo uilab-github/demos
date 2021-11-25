@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 export const AttrRadioOption = ({
   data,
@@ -11,7 +11,7 @@ export const AttrRadioOption = ({
 }) => {
   const _attrRadioOptionElem = (_attribute: string) => {
     return (
-      <>
+      <Fragment key={_attribute}>
         <input
           id={_attribute}
           value={_attribute}
@@ -22,8 +22,13 @@ export const AttrRadioOption = ({
           onChange={onChange}
         />
         {_attribute}
-      </>
+      </Fragment>
     );
   };
-  return <div>{data.map((oneData) => _attrRadioOptionElem(oneData))}</div>;
+  return (
+    <div>
+      <span>Attribute: </span>
+      {data.map((oneData) => _attrRadioOptionElem(oneData))}
+    </div>
+  );
 };

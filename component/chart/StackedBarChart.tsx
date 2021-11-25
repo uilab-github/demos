@@ -1,4 +1,12 @@
-import { ChangeEvent, useState } from 'react';
+import { useState, useEffect } from 'react';
+import {
+  Chart as ChartJS,
+  BarElement,
+  LinearScale,
+  CategoryScale,
+  Title,
+  Tooltip,
+} from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { DataFormat } from 'data/DataLoader';
@@ -6,6 +14,8 @@ import { generateChartData } from './ChartUtil';
 import { getChartOptions } from './ChartOptions';
 import { REAL_DATA } from 'data/DataLoader';
 import { AttrRadioOption } from './ChartAttributeRadioTag';
+
+ChartJS.register(BarElement, LinearScale, CategoryScale, Title, Tooltip);
 
 const defaultStackedBar = {
   data: REAL_DATA,
@@ -21,34 +31,36 @@ export const StackedBar = ({
 }) => {
   const _data = data !== undefined ? data : defaultStackedBar.data;
   const _mask = mask !== undefined ? mask : defaultStackedBar.mask;
-  const languageDistributions = _data[_mask];
   const maskList = Object.keys(_data);
 
-  // const [dataState, setDataState] = useState(_data);
-  const [attribute, setAttribute] = useState(maskList[0]);
-
-  const chart = (
-    <Bar
-      data={generateChartData(languageDistributions)}
-      options={getChartOptions(_mask)}
-      plugins={[ChartDataLabels]}
-    />
+  const [languageDistributions, setLanguageDistributions] = useState(
+    _data[_mask]
   );
+  const [_attribute, set_Attribute] = useState(maskList[0]);
 
   const onAttributeChange: React.ChangeEventHandler<HTMLInputElement> = (
     e: React.ChangeEvent<HTMLInputElement>
   ) => {
-    setAttribute(e.target.value);
+    set_Attribute(e.target.value);
   };
+
+  useEffect(() => {
+    const _languageDistributions = _data[_attribute];
+    setLanguageDistributions(() => _languageDistributions);
+  }, [_data, _attribute]);
 
   return (
     <>
       <AttrRadioOption
         data={maskList}
-        attribute={attribute}
+        attribute={_attribute}
         onChange={onAttributeChange}
       />
-      {chart}
+      <Bar
+        data={generateChartData(languageDistributions)}
+        options={getChartOptions(_attribute)}
+        plugins={[ChartDataLabels]}
+      />
     </>
   );
 };
