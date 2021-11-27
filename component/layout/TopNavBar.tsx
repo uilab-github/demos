@@ -6,6 +6,12 @@ import PaperIcon from 'public/paper.svg';
 const TopNavBar = () => {
   return (
     <header className={classes.header}>
+      <div className={classes.padding}>
+        <div className={classes.paddingText}>
+          <span className={classes.paddingTextBold}>{'KAIST'}</span>
+          {'Users & Information Lab'}
+        </div>
+      </div>
       <div className={classes.content}>
         <div className={classes.logo}>
           <div className={classes.logoImage}></div>
