@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 export const AttrRadioOption = ({
   data,
@@ -10,14 +11,13 @@ export const AttrRadioOption = ({
   onChange: React.ChangeEventHandler<HTMLInputElement>;
 }) => {
   const _attrRadioOptionElem = (_attribute: string) => {
+    const uuid: string = uuidv4();
     return (
-      <Fragment key={_attribute}>
+      <Fragment key={uuid}>
         <input
           id={_attribute}
           value={_attribute}
-          name="attribute"
           type="radio"
-          key={_attribute}
           checked={attribute === _attribute}
           onChange={onChange}
         />
