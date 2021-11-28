@@ -50,7 +50,6 @@ export const TypingEffect = () => {
             .typeString(answerSet[0][2])
             .pauseFor(1000)
             .deleteChars(stripHtml(answerSet[0][2]).result.length)
-            .pauseFor(1000)
             .deleteChars(stripHtml(questions[0]).result.length)
             .deleteChars(2)
             .typeString(questions[1])
