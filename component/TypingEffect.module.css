@@ -1,0 +1,25 @@
+.typewriter {
+  display: flex;
+  margin-top: 30px;
+  /* margin-bottom: 24px; */
+  height: 2rem;
+  font-family: 'Roboto';
+  /* font-style: italic; */
+}
+
+.mask {
+  /* font-weight: 500; */
+  /* font-style: italic; */
+  font-weight: 500;
+}
+
+.bert {
+  font-weight: 500;
+  color: rgb(0, 78, 254);
+}
+
+.target,
+.attribute {
+  font-weight: 500;
+  color: rgb(248, 19, 40);
+}
