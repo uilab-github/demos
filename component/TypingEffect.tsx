@@ -17,7 +17,7 @@ const answerSet = [
   [
     generateAnswer('Spanish', 'Afghanistan'),
     generateAnswer('Korean', 'Japan'),
-    generateAnswer('Turkey', 'China'),
+    generateAnswer('Turkish', 'China'),
     // 'Spanish-BERT predicts <span className="{classes.mask}">[mask]</span> as Afghanistan.',
     // 'Korean-BERT predicts <span className="{classes.mask}">[mask]</span> as Japan.',
     // 'Turkey-BERT predicts <span className="{classes.mask}">[mask]</span> as China.',
