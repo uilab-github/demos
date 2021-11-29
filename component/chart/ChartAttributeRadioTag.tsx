@@ -14,7 +14,7 @@ export const AttrRadioOption = ({
   const _attrRadioOptionElem = (_attribute: string) => {
     const uuid: string = uuidv4();
     return (
-      <Fragment key={uuid}>
+      <label className={classes.radioTagWrapper} key={uuid}>
         <input
           id={_attribute}
           value={_attribute}
@@ -23,7 +23,7 @@ export const AttrRadioOption = ({
           onChange={onChange}
         />
         {_attribute}
-      </Fragment>
+      </label>
     );
   };
   return (
