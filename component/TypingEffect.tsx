@@ -3,13 +3,13 @@ import classes from './TypingEffect.module.css';
 import { stripHtml } from 'string-strip-html';
 
 const generateQuestion = (attribute: string) =>
-  `A person from <span class="${classes.mask}">[mask]</span> ` +
+  `A person from <span class="${classes.mask}">[MASK]</span> ` +
   `is an <span class="${classes.attribute}">${attribute}</span>.` +
   ` `;
 
 const generateAnswer = (bertLanguage: string, target: string) =>
   `<span class="${classes.bert}">${bertLanguage}-BERT</span> ` +
-  `predicts <span class="${classes.mask}">[mask]</span> ` +
+  `predicts <span class="${classes.mask}">[MASK]</span> ` +
   `as <span class="${classes.target}">${target}.<span>`;
 
 const questions = [generateQuestion('enemy'), generateQuestion('immigrant')];

@@ -59,7 +59,7 @@ export const getChartOptions = (title = 'enemy'): ChartOptions<'bar'> => ({
             return context.dataset.data[context.dataIndex] >= 0.05;
           },
           font: {
-            size: 11,
+            size: 10,
             weight: 450,
           },
           formatter: (_, context) => {
