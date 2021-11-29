@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import classes from './ChartAttributeRatioTag.module.css';
 import { v4 as uuidv4 } from 'uuid';
 
 export const AttrRadioOption = ({
@@ -26,7 +27,7 @@ export const AttrRadioOption = ({
     );
   };
   return (
-    <div>
+    <div className={classes.radioTagWrapper}>
       <span>Attribute: </span>
       {data.map((oneData) => _attrRadioOptionElem(oneData))}
     </div>
