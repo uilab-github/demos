@@ -1,4 +1,4 @@
-import Typewriter, { TypewriterClass } from 'typewriter-effect';
+import Typewriter from 'typewriter-effect';
 import classes from './TypingEffect.module.css';
 import { stripHtml } from 'string-strip-html';
 

@@ -1,14 +1,12 @@
 .typewriter {
   display: flex;
-  margin-top: 30px;
   height: 2rem;
   font-family: 'Roboto';
   color: rgb(71, 81, 92);
+  line-height: 3rem;
 }
 
 .mask {
-  /* font-weight: 500; */
-  /* font-style: italic; */
   font-weight: bold;
 }
 
@@ -21,4 +19,14 @@
 .attribute {
   font-weight: 500;
   color: rgb(248, 19, 40);
+}
+
+@media only screen and (max-width: 30rem) {
+  .typewriter {
+    display: flex;
+    height: 3rem;
+    font-family: 'Roboto';
+    color: rgb(71, 81, 92);
+    line-height: 1.5rem;
+  }
 }

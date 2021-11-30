@@ -1,7 +1,15 @@
-/* .h1 {
-  margin-bottom: 0.5em;
-} */
+.h1 {
+}
 
 .h2 {
   font-size: 1.6em;
+}
+
+@media only screen and (max-width: 30rem) {
+  .h1 {
+    font-size: 1.65rem;
+  }
+  .h2 {
+    font-size: 1.4rem;
+  }
 }

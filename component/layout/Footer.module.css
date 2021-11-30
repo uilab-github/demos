@@ -4,7 +4,7 @@
   justify-content: center;
   width: 100%;
   height: 5rem;
-  font-size: 13px;
+  font-size: 0.8125rem;
   background-color: rgba(5, 56, 134);
   color: white;
 }
@@ -25,5 +25,27 @@
 @media (min-width: 900px) {
   .footerInliner {
     width: 900px;
+  }
+}
+
+@media only screen and (max-width: 30rem) {
+  .footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 3rem;
+    font-size: 0.6125rem;
+    background-color: rgba(5, 56, 134);
+    color: white;
+  }
+
+  .footerInliner {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
   }
 }
