@@ -23,47 +23,42 @@ We define ethnic bias in BERT as the degree of variance of the probability of a 
 
 We formally define normalized probability used in our ethnic bias metric.
 The metric is based on the change-of-probability of the target words given the presence or absence of an attribute word.
-This normalized probability does not measure the probability of a word occurring, but rather measures the association between the target and the attribute indirectly.
-
-For example, given the sentence template “People from [mask] is an [attribute]," the probability of various ethnicity words to replace [mask] should follow the prior probabilities of those words and not vary significantly depending on the attribute.
 _If a model predicts more uniform normalized probabilities to all target groups, the model's ethnic bias is lower._
+
+We propose the Categorical Bias (CB) score, defined as the variance of log normalized probabilities.
+If the model predicts uniform normalized probabilities to all target groups, then the CB score would be 0.
+On the contrary, for a model with a high ethnic bias, the CB score would also be very high.
+
+The bias is easily seen in the chart above.
+Depending on the language in which the monolingual BERT is trained, different attributes are predicted for the same question.
 
 <br />
 
 ## Mitigation Result
 
-We define ethnic bias in BERT as the degree of variance of the probability of a country name given an attribute in a sentence without any relevant clues.
+We propose and apply two solutions: **multilingual BERT**(M-BERT) and **contextual word alignment**.
 
 <StackedBar />
 
-We formally define normalized probability used in our ethnic bias metric.
-The metric is based on the change-of-probability of the target words given the presence or absence of an attribute word.
-This normalized probability does not measure the probability of a word occurring, but rather measures the association between the target and the attribute indirectly.
+Original M-BERT helps to greatly reduce ethnic bias for English, German, and Spanish.
+At first, ethnic bias is not mitigated with the M-BERT for Chinese. But in the end, M-BERT with fine-tuning performs the best on the high-resource languages, including Chinese.
 
-For example, given the sentence template “People from [mask] is an [attribute]," the probability of various ethnicity words to replace [mask] should follow the prior probabilities of those words and not vary significantly depending on the attribute.
-_If a model predicts more uniform normalized probabilities to all target groups, the model's ethnic bias is lower._
-
-<br />
-
-<!---
-## Final Demo
+We choose to align the monolingual LMs to English BERT, and this mitigation is effective for Korean and Turkish for which the M-BERT mitigation is not very effective.
+We find the method is useful to mitigate ethnic bias for the languages in which M-BERT performance degradation occurs due to a relative lack of resources.
 
 <br />
-<Image alt="Demo position" src="/worldmap.jpg" width={800} height={400} />
-
-<br />
-<br />
-<br />
--->
 
 ## Conclusion & Future Work
 
 In this paper, we study language-dependent ethnic biases in BERT.
-To first quantify ethnic bias, we introduced the category bias (CB) score.
+To first quantify ethnic bias, we introduced the **category bias (CB) score**.
 
-We show the language-dependent nature of ethnic bias, and then we proposed two mitigation strategies: multilingual model and contextual word alignment with English, which has the lowest CB score.
+We show the language-dependent nature of ethnic bias, and then we proposed two mitigation strategies: **multilingual model and contextual word alignment** with English, which has the lowest CB score.
 For resource-rich languages, the multilingual model alone can mitigate the bias, or fine-tuning the multilingual model can effectively decrease the bias.
 For all languages, the alignment approach reduces bias and is a better solution for low-resource languages.
+
+Most of the research on bias is limited to English, and our work contributes to studying bias in multiple languages including relatively low-resource languages.
+Our study shows the variation of ethnic bias across languages with the same set of templates and attributes translated into multiple languages.
 
 <br />
 
