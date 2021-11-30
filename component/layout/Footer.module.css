@@ -34,7 +34,7 @@
     flex-direction: row;
     justify-content: center;
     width: 100%;
-    height: 3rem;
+    height: 5rem;
     font-size: 0.6125rem;
     background-color: rgba(5, 56, 134);
     color: white;
@@ -42,10 +42,16 @@
 
   .footerInliner {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 0px 20px;
+  }
+  .footerContent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
   }
 }

@@ -4,12 +4,18 @@ const Footer = () => {
   return (
     <div className={classes.footer}>
       <div className={classes.footerInliner}>
-        <div>
-          © Copyright 2021 | Users {'&'} Information Lab. <br /> U{'&'}I Lab.,
-          Room 4417, E3-1 Computer Science Building, <br />
-          KAIST, 291 Daehak-ro, Yuseong-gu, Daejeon 34141, South Korea
+        <div className={classes.footerContent}>
+          <div>
+            © Copyright 2021 | Users {'&'} Information Lab. U{'&'}I Lab.,
+          </div>
+          <div>
+            Room 4417, E3-1 Computer Science Building, <br />
+          </div>
+          <div>
+            KAIST, 291 Daehak-ro, Yuseong-gu, Daejeon 34141, South Korea
+          </div>
         </div>
-        <div>
+        <div className={classes.footerContent}>
           <a
             className={classes.editLink}
             href="https://github.com/quark325/uilab-visualization-demo"
