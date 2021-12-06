@@ -12,15 +12,9 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { DataFormat } from 'data/DataLoader';
 import { generateChartData } from './ChartUtil';
 import { getChartOptions } from './ChartOptions';
-import { REAL_DATA } from 'data/DataLoader';
 import { AttrRadioOption } from './ChartAttributeRadioTag';
 
 ChartJS.register(BarElement, LinearScale, CategoryScale, Title, Tooltip);
-
-const defaultStackedBar = {
-  data: REAL_DATA,
-  mask: 'enemy',
-};
 
 export const StackedBar = ({
   data,
@@ -29,8 +23,8 @@ export const StackedBar = ({
   data: DataFormat;
   mask: string;
 }) => {
-  const _data = data !== undefined ? data : defaultStackedBar.data;
-  const _mask = mask !== undefined ? mask : defaultStackedBar.mask;
+  const _data = data;
+  const _mask = mask !== undefined ? mask : Object.keys(data)[0];
   const maskList = Object.keys(_data);
 
   const [languageDistributions, setLanguageDistributions] = useState(
@@ -55,7 +49,6 @@ export const StackedBar = ({
         data={generateChartData(languageDistributions)}
         options={getChartOptions(_attribute)}
         plugins={[ChartDataLabels]}
-        // redraw={true} This option for redraw all the chart
       />
       <br />
       <AttrRadioOption

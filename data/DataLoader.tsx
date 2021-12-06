@@ -7,4 +7,5 @@ export interface DataFormat {
   };
 }
 
-export const REAL_DATA: DataFormat = rawData;
+export const BEFORE_DATA: DataFormat = rawData.before;
+export const AFTER_DATA: DataFormat = rawData.migitation;
