@@ -12,11 +12,10 @@ RUN        apt-get -y update
 
 RUN git clone https://github.com/quark325/uilab-visualization-demo.git
 WORKDIR /uilab-visualization-demo
-RUN npm install
+RUN npm install --only=production
 RUN npm audit fix
 
 RUN npm run build
-RUN npm run start
 
 EXPOSE 22 80 443 3000
-# CMD /bin/bash
+CMD npm run start
