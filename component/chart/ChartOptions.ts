@@ -9,7 +9,10 @@ const formatTitle = (word: string) => {
 };
 
 //this option for 6 row bar charts.
-export const getChartOptions = (title = 'enemy'): ChartOptions<'bar'> => ({
+export const getChartOptions = (
+  title = 'enemy',
+  length: number
+): ChartOptions<'bar'> => ({
   indexAxis: 'y',
   elements: {
     bar: {
@@ -18,18 +21,22 @@ export const getChartOptions = (title = 'enemy'): ChartOptions<'bar'> => ({
   },
   datasets: {
     bar: {
-      barPercentage: 0.7,
+      // barPercentage: 0.7,
+      barThickness: 30,
     },
   },
   responsive: true,
-  aspectRatio: 1.9,
+  aspectRatio: length === 6 ? 1.9 : 2.2,
   plugins: {
     title: {
       display: true,
       text: formatTitle(title),
       font: {
-        size: 13,
+        size: 14,
         weight: '500',
+      },
+      padding: {
+        bottom: 5,
       },
       color: 'black',
     },
@@ -66,7 +73,7 @@ export const getChartOptions = (title = 'enemy'): ChartOptions<'bar'> => ({
             return context.dataset.label;
           },
           align: 'bottom',
-          offset: 17,
+          offset: 20,
         },
       },
     },

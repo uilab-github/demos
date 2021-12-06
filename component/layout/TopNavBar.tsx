@@ -13,13 +13,13 @@ const TopNavBar = () => {
         </div>
       </div>
       <div className={classes.content}>
-        <div className={classes.logo}>
+        <a href="https://uilab.kr/" className={classes.logo}>
           <div className={classes.logoImage}></div>
           <div className={classes.logoText}>
             USERS {'&'} <br />
             INFORMATION
           </div>
-        </div>
+        </a>
         <ul>
           <TopNavElement name="Paper" link="https://arxiv.org/abs/2109.05704">
             <PaperIcon />
