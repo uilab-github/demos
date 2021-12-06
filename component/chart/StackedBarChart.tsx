@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, memo } from 'react';
 import {
   Chart as ChartJS,
   BarElement,
@@ -24,13 +24,7 @@ ChartJS.register(
   Tooltip
 );
 
-export const StackedBar = ({
-  data,
-  mask,
-}: {
-  data: DataFormat;
-  mask: string;
-}) => {
+const _StackedBar = ({ data, mask }: { data: DataFormat; mask: string }) => {
   const _data = data;
   const _mask = mask !== undefined ? mask : Object.keys(data)[0];
 
@@ -65,3 +59,5 @@ export const StackedBar = ({
     </>
   );
 };
+
+export const StackedBar = memo(_StackedBar);
