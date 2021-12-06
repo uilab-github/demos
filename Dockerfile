@@ -13,9 +13,11 @@ RUN        apt-get -y update
 RUN git clone https://github.com/quark325/uilab-visualization-demo.git
 WORKDIR /uilab-visualization-demo
 RUN npm install --only=production
+RUN npm install pm2 -g
 RUN npm audit fix
 
 RUN npm run build
 
 EXPOSE 22 80 443 3000
-CMD npm run start
+# RUN pm2 --name UilabDemo start npm -- start
+CMD ["pm2-runtime", "--name", "UilabDemo", "start", "npm", "--", "start"]
