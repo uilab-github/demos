@@ -101,10 +101,51 @@ const NATIONS_TO_ABBR = {
   Others: 'Others',
 };
 
+const NATIONS_TO_ISO_A3 = {
+  America: 'USA',
+  Canada: 'CAN',
+  Japan: 'JPN',
+  China: 'CHN',
+  Korea: 'KOR ',
+  England: 'GBR',
+  France: 'FRA',
+  Germany: 'DEU',
+  Mexico: 'MEX',
+  Iraq: 'IRQ',
+  Ireland: 'IRL',
+  Iran: 'IRN',
+  Saudi: 'SAU',
+  Russia: 'RUS',
+  Vietnam: 'VNM',
+  Thailand: 'THA',
+  Australia: 'AUS',
+  Spain: 'ESP',
+  Turkey: 'TUR',
+  Israel: 'ISR',
+  Italy: 'ITA',
+  Egypt: 'EGY',
+  Somalia: 'SOM',
+  India: 'IND',
+  Brazil: 'BRA',
+  Colombia: 'COL',
+  Greece: 'GRC',
+  Afghanistan: 'AFG',
+  Cuba: 'CUB',
+  Syria: 'SYR',
+};
+
 const ABBR_TO_NATIONS = Object.keys(NATIONS_TO_ABBR).reduce((accum, nation) => {
   accum[NATIONS_TO_ABBR[nation]] = nation;
   return accum;
 }, {});
+
+const ISO_A3_TO_NATIONS = Object.keys(NATIONS_TO_ISO_A3).reduce(
+  (accum, nation) => {
+    accum[NATIONS_TO_ISO_A3[nation]] = nation;
+    return accum;
+  },
+  {}
+);
 
 const toRGBString = (r: number, g: number, b: number) => {
   return `rgb(${r}, ${g}, ${b})`;
@@ -192,35 +233,16 @@ export const getNationFromAbbr = (abbr: string): string => {
   return ABBR_TO_NATIONS[abbr];
 };
 
-// const NATIONS = {
-//   AMERICA: 'America',
-//   CANADA: 'Canada',
-//   JAPAN: 'Japan',
-//   CHINA: 'China',
-//   KOREA: 'Korea',
-//   ENGLAND: 'England',
-//   FRANCE: 'France',
-//   GERMANY: 'Germany',
-//   MEXICO: 'Mexico',
-//   IRAQ: 'Iraq',
-//   IRELAND: 'Ireland',
-//   IRAN: 'Iran',
-//   SAUDI: 'Saudi',
-//   RUSSIA: 'Russia',
-//   VIETNAM: 'Vietnam',
-//   THAILAND: 'Thailand',
-//   AUSTRALIA: 'Australia',
-//   SPAIN: 'Spain',
-//   TURKEY: 'Turkey',
-//   ISRAEL: 'Israel',
-//   ITAILY: 'Italy',
-//   EGYPT: 'Egypt',
-//   SOMALIA: 'Somalia',
-//   INDIA: 'India',
-//   BRAZIL: 'Brazil',
-//   COLOMBIA: 'Colombia',
-//   GREECE: 'Greece',
-//   AFGHANISTAN: 'Afghanistan',
-//   CUBA: 'Cuba',
-//   SYRIA: 'Syria',
-// };
+export const getNationFromISOA3 = (IOS_A3: string): string => {
+  if (!(IOS_A3 in ISO_A3_TO_NATIONS)) {
+    return '';
+  }
+  return ISO_A3_TO_NATIONS[IOS_A3];
+};
+
+export const getISOA3FromNation = (name: string): string => {
+  if (!(name in NATIONS_TO_ISO_A3)) {
+    return '';
+  }
+  return NATIONS_TO_ISO_A3[name];
+};

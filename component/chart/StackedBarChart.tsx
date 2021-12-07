@@ -10,7 +10,7 @@ import {
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
-import { DataFormat } from 'data/DataLoader';
+import { DataFormat } from 'data/paperDataLoader';
 import { generateChartData } from './ChartUtil';
 import { getChartOptions } from './ChartOptions';
 import { AttrRadioOption } from './ChartAttributeRadioTag';

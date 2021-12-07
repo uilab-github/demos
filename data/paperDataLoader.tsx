@@ -1,5 +1,5 @@
 import { NationDistribution } from '../component/chart/NationUtil';
-import rawData from './data.json';
+import rawData from './paperData.json';
 
 export interface DataFormat {
   [mask: string]: {
