@@ -2,6 +2,7 @@ import React from 'react';
 import { ComposableMap, Geographies, Geography } from 'react-simple-maps';
 import geography from '../../data/geography.json';
 import { scaleLinear } from 'd3-scale';
+import { getNationFromISOA3 } from 'component/chart/NationUtil';
 
 const colorScale = scaleLinear(
   [-1.4 / 5, 0, 1 / 5, 2 / 5, 3 / 5, 4 / 5, 1, 6 / 5],
@@ -18,20 +19,16 @@ const colorScale = scaleLinear(
 );
 
 type MapChartProps = {
-  isActive: (geo: any) => boolean;
   getColorPoint: (geo: any) => number;
 };
 
-export const Map = ({ isActive, getColorPoint }: MapChartProps) => (
+export const Map = ({ getColorPoint }: MapChartProps) => (
   <ComposableMap>
     <Geographies geography={geography}>
       {({ geographies }) =>
         geographies.map((geo) => {
-          const active = isActive(geo);
+          const active = getNationFromISOA3(geo.properties.ISO_A3) !== '';
           const colorPoint = getColorPoint(geo);
-          // if (active) {
-          //   console.log(`ActiveNation: ${geo.properties.NAME}`);
-          // }
           return (
             <Geography
               key={geo.rsmKey}

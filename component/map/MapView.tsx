@@ -1,10 +1,34 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Map } from './Map';
 import classes from './MapView.module.css';
-import { NationDistribution } from 'component/chart/NationUtil';
-import { getNationFromISOA3 } from 'component/chart/NationUtil';
-import { BEFORE_DATA, AFTER_DATA } from 'data/paperDataLoader';
+import {
+  NationDistribution,
+  getNationFromISOA3,
+} from 'component/chart/NationUtil';
+
+import { BEFORE_DATA, AFTER_DATA, DataFormat } from 'data/paperDataLoader';
 import { RadioOption } from 'component/chart/ChartAttributeRadioTag';
+import { StackedBar } from 'component/chart/StackedBarChart';
+
+const getColorPoint = (nationDistribution: NationDistribution) => {
+  return (geo) => {
+    const nation = getNationFromISOA3(geo.properties.ISO_A3);
+    if (nation === '') {
+      return 0;
+    }
+    const distribution = nationDistribution[nation];
+    return Math.min(-1.5 / 6 + ((1.5 + 6) / 6) * distribution * 2.0, 1);
+  };
+};
+
+const getChartData = (attribute: string, language: string): DataFormat => {
+  return {
+    [attribute]: {
+      [language + ' Before']: BEFORE_DATA[attribute][language],
+      [language + ' After']: AFTER_DATA[attribute][language],
+    },
+  };
+};
 
 export const MapView = () => {
   const attributes = Object.keys(AFTER_DATA);
@@ -15,44 +39,17 @@ export const MapView = () => {
 
   const [attribute, setAttribute] = useState(baseAttribute);
   const [language, setLanguage] = useState(baseLanguage);
-  const [beforeDistribution, setBeforeDistribution] =
-    useState<NationDistribution>(BEFORE_DATA[baseAttribute][baseLanguage]);
-  const [afterDistribution, setAfterDistribution] =
-    useState<NationDistribution>(AFTER_DATA[baseAttribute][baseLanguage]);
-
-  const isActive = (geo) => {
-    return getNationFromISOA3(geo.properties.ISO_A3) !== '';
-  };
-
-  useEffect(() => {
-    setBeforeDistribution(BEFORE_DATA[attribute][language]);
-    setAfterDistribution(AFTER_DATA[attribute][language]);
-  }, [attribute, language]);
 
   return (
     <div>
       <div className={classes.map}>
-        <Map
-          isActive={isActive}
-          getColorPoint={(geo) => {
-            const nation = getNationFromISOA3(geo.properties.ISO_A3);
-            if (nation === '') {
-              return 0;
-            }
-            const distribution = beforeDistribution[nation];
-            return Math.min(-1.5 / 6 + ((1.5 + 6) / 6) * distribution * 2.0, 1);
-          }}
-        />
-        <Map
-          isActive={isActive}
-          getColorPoint={(geo) => {
-            const nation = getNationFromISOA3(geo.properties.ISO_A3);
-            if (nation === '') {
-              return 0;
-            }
-            const distribution = afterDistribution[nation];
-            return Math.min(-1.5 / 6 + ((1.5 + 6) / 6) * distribution * 2.0, 1);
-          }}
+        <Map getColorPoint={getColorPoint(BEFORE_DATA[attribute][language])} />
+        <Map getColorPoint={getColorPoint(AFTER_DATA[attribute][language])} />
+      </div>
+      <div>
+        <StackedBar
+          data={getChartData(attribute, language)}
+          attribute={attribute}
         />
       </div>
       <RadioOption
