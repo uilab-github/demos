@@ -12,39 +12,22 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { DataFormat } from 'data/paperDataLoader';
 import { generateChartData } from './ChartUtil';
 import { getChartOptions } from './ChartOptions';
-import { RadioOption } from './ChartAttributeRadioTag';
 
 ChartJS.register(BarElement, LinearScale, CategoryScale, Title, Tooltip);
 
-const _StackedBar = ({ data }: { data: DataFormat }) => {
-  const baseAttribute = Object.keys(data)[0];
-  const attributes = Object.keys(data);
-  const numberOfLanguage = Object.keys(data[baseAttribute]).length;
-
-  const [languageDistributions, setLanguageDistributions] = useState(
-    data[baseAttribute]
-  );
-  const [attribute, setAttribute] = useState(baseAttribute);
-
-  useEffect(() => {
-    setLanguageDistributions(data[attribute]);
-  }, [data, attribute]);
-
-  return (
-    <>
-      <Bar
-        data={generateChartData(languageDistributions)}
-        options={getChartOptions(attribute, numberOfLanguage)}
-        plugins={[ChartDataLabels]}
-      />
-      <RadioOption
-        optionList={attributes}
-        value={attribute}
-        description={'Attributes'}
-        onChange={(e) => setAttribute(e.target.value)}
-      />
-    </>
-  );
+type TStackedBarProps = {
+  data: DataFormat;
+  attribute: string;
 };
 
-export const StackedBar = memo(_StackedBar);
+export const StackedBar = ({ data, attribute }: TStackedBarProps) => {
+  const numberOfLanguage = Object.keys(data[attribute]).length;
+
+  return (
+    <Bar
+      data={generateChartData(data[attribute])}
+      options={getChartOptions(attribute, numberOfLanguage)}
+      plugins={[ChartDataLabels]}
+    />
+  );
+};

@@ -1,4 +1,4 @@
-import { StackedBar } from '../component/chart/StackedBarChart';
+import { StackedBarView } from '../component/chart/StackedBarChartView';
 import { BEFORE_DATA, AFTER_DATA } from 'data/paperDataLoader';
 import { TypingEffect } from '../component/TypingEffect';
 import Image from 'next/image';
@@ -20,7 +20,7 @@ Then we propose two methods for mitigation; first using a multilingual model, an
 
 We define ethnic bias in BERT as the degree of variance of the probability of a country name given an attribute in a sentence without any relevant clues.
 
-<StackedBar data={BEFORE_DATA} />
+<StackedBarView data={BEFORE_DATA} />
 
 We formally define normalized probability used in our ethnic bias metric.
 The metric is based on the change-of-probability of the target words given the presence or absence of an attribute word.
@@ -39,7 +39,7 @@ Depending on the language in which the monolingual BERT is trained, different at
 
 We propose and apply two solutions: **multilingual BERT**(M-BERT) and **contextual word alignment**.
 
-<StackedBar data={AFTER_DATA} />
+<StackedBarView data={AFTER_DATA} />
 
 Original M-BERT helps to greatly reduce ethnic bias for English, German, and Spanish.
 At first, ethnic bias is not mitigated with the M-BERT for Chinese. But in the end, M-BERT with fine-tuning performs the best on the high-resource languages, including Chinese.
