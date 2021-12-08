@@ -5,6 +5,7 @@ import {
   CategoryScale,
   Title,
   Tooltip,
+  ChartOptions,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
@@ -17,15 +18,19 @@ ChartJS.register(BarElement, LinearScale, CategoryScale, Title, Tooltip);
 type TStackedBarProps = {
   data: DataFormat;
   attribute: string;
+  displayTitle?: boolean;
 };
 
-export const StackedBar = ({ data, attribute }: TStackedBarProps) => {
+export const StackedBar = ({
+  data,
+  attribute,
+  displayTitle,
+}: TStackedBarProps) => {
   const numberOfLanguage = Object.keys(data[attribute]).length;
-
   return (
     <Bar
       data={generateChartData(data[attribute])}
-      options={getChartOptions(attribute, numberOfLanguage)}
+      options={getChartOptions(attribute, numberOfLanguage, displayTitle)}
       plugins={[ChartDataLabels]}
     />
   );

@@ -50,6 +50,7 @@ export const MapView = () => {
         <StackedBar
           data={getChartData(attribute, language)}
           attribute={attribute}
+          displayTitle={false}
         />
       </div>
       <RadioOption

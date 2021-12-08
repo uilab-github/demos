@@ -8,11 +8,16 @@ const formatTitle = (word: string) => {
   return `A person from [MASK] is ${article} ${word}`;
 };
 
-//this option for 6 row bar charts.
-export const getChartOptions = (
-  title = 'enemy',
-  numberOfLanguage: number
-): ChartOptions<'bar'> => ({
+const getAspectRatio = (numberOfColumn: number) => {
+  const ratioTable = {
+    2: 6.5,
+    5: 2.2,
+    6: 1.9,
+  };
+  return ratioTable[numberOfColumn];
+};
+
+const getBaseChartOptions = (): ChartOptions<'bar'> => ({
   indexAxis: 'y',
   elements: {
     bar: {
@@ -21,25 +26,11 @@ export const getChartOptions = (
   },
   datasets: {
     bar: {
-      // barPercentage: 0.7,
       barThickness: 30,
     },
   },
   responsive: true,
-  aspectRatio: numberOfLanguage === 6 ? 1.9 : 2.2,
   plugins: {
-    title: {
-      display: true,
-      text: formatTitle(title),
-      font: {
-        size: 14,
-        weight: '500',
-      },
-      padding: {
-        bottom: 5,
-      },
-      color: 'black',
-    },
     legend: {
       display: false,
       onClick: (e) => {},
@@ -89,7 +80,6 @@ export const getChartOptions = (
         text: 'Normalized probability',
       },
     },
-
     y: {
       stacked: true,
       grid: {
@@ -98,3 +88,33 @@ export const getChartOptions = (
     },
   },
 });
+
+//this option for 6 row bar charts.
+export const getChartOptions = (
+  title: string,
+  numberOfLanguage: number,
+  displayTitle = true
+): ChartOptions<'bar'> => {
+  const retChartOption = getBaseChartOptions();
+  retChartOption.aspectRatio = getAspectRatio(numberOfLanguage);
+  retChartOption.plugins.title = {
+    display: true,
+    text: formatTitle(title),
+    font: {
+      size: 14,
+      weight: '500',
+    },
+    padding: {
+      bottom: 5,
+    },
+    color: 'black',
+  };
+  if (!displayTitle) {
+    retChartOption.plugins.title.display = false;
+    // retChartOption.scales.x.title.display = false;
+    // retChartOption.scales.x.grid.display = false;
+    // retChartOption.scales.x.position = 'bottom';
+    retChartOption.scales.x.display = false;
+  }
+  return retChartOption;
+};
