@@ -23,7 +23,7 @@ type MapChartProps = {
 };
 
 export const Map = ({ getColorPoint }: MapChartProps) => (
-  <ComposableMap>
+  <ComposableMap width={800} height={475}>
     <Geographies geography={geography}>
       {({ geographies }) =>
         geographies.map((geo) => {
