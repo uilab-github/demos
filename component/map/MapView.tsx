@@ -24,8 +24,8 @@ const getColorPoint = (nationDistribution: NationDistribution) => {
 const getChartData = (attribute: string, language: string): DataFormat => {
   return {
     [attribute]: {
-      [language + ' Before']: BEFORE_DATA[attribute][language],
-      [language + ' After']: AFTER_DATA[attribute][language],
+      ['Before']: BEFORE_DATA[attribute][language],
+      ['After']: AFTER_DATA[attribute][language],
     },
   };
 };
