@@ -11,7 +11,7 @@ const formatTitle = (word: string) => {
 //this option for 6 row bar charts.
 export const getChartOptions = (
   title = 'enemy',
-  length: number
+  numberOfLanguage: number
 ): ChartOptions<'bar'> => ({
   indexAxis: 'y',
   elements: {
@@ -26,7 +26,7 @@ export const getChartOptions = (
     },
   },
   responsive: true,
-  aspectRatio: length === 6 ? 1.9 : 2.2,
+  aspectRatio: numberOfLanguage === 6 ? 1.9 : 2.2,
   plugins: {
     title: {
       display: true,

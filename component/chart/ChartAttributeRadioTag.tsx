@@ -2,34 +2,36 @@ import React from 'react';
 import classes from './ChartAttributeRatioTag.module.css';
 import { v4 as uuidv4 } from 'uuid';
 
-export const AttrRadioOption = ({
-  data,
-  attribute,
+export const RadioOption = ({
+  optionList,
+  value,
+  description,
   onChange,
 }: {
-  data: string[];
-  attribute: string;
+  optionList: string[];
+  value: string;
+  description: string;
   onChange: React.ChangeEventHandler<HTMLInputElement>;
 }) => {
-  const _attrRadioOptionElem = (_attribute: string) => {
+  const attrRadioOptionElem = (option: string) => {
     const uuid: string = uuidv4();
     return (
       <label className={classes.radioTagWrapper} key={uuid}>
         <input
-          id={_attribute}
-          value={_attribute}
+          id={option}
+          value={option}
           type="radio"
-          checked={attribute === _attribute}
+          checked={value === option}
           onChange={onChange}
         />
-        {_attribute}
+        {option}
       </label>
     );
   };
   return (
     <div className={classes.radioTagWrapper}>
-      <span>Attribute: </span>
-      {data.map((oneData) => _attrRadioOptionElem(oneData))}
+      <span>{description}: </span>
+      {optionList.map((oneData) => attrRadioOptionElem(oneData))}
     </div>
   );
 };

@@ -2,7 +2,7 @@ import { NationDistribution } from '../component/chart/NationUtil';
 import rawData from './paperData.json';
 
 export interface DataFormat {
-  [mask: string]: {
+  [attribute: string]: {
     [language: string]: NationDistribution;
   };
 }
