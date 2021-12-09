@@ -5,6 +5,7 @@ import {
   NationDistribution,
   getNationFromISOA3,
 } from 'component/chart/NationUtil';
+import { languageAbbrToFull, languageFullToAbbr } from '../util';
 
 import { BEFORE_DATA, AFTER_DATA, DataFormat } from 'data/paperDataLoader';
 import { RadioOption } from 'component/chart/ChartAttributeRadioTag';
@@ -60,10 +61,10 @@ export const MapView = () => {
         onChange={(e) => setAttribute(e.target.value)}
       />
       <RadioOption
-        optionList={languages}
-        value={language}
+        optionList={languages.map((abbr) => languageAbbrToFull(abbr))}
+        value={languageAbbrToFull(language)}
         description={'Language'}
-        onChange={(e) => setLanguage(e.target.value)}
+        onChange={(e) => setLanguage(languageFullToAbbr(e.target.value))}
       />
     </div>
   );

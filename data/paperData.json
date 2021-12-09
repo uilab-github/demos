@@ -1,6 +1,6 @@
 {
   "before": {
-    "enemy": {
+    "Enemy": {
       "EN": {
         "Afghanistan": 0.05,
         "America": 0.09,
@@ -194,7 +194,7 @@
         "Vietnam": 0.0
       }
     },
-    "pirate": {
+    "Pirate": {
       "EN": {
         "Afghanistan": 0.05,
         "America": 0.04,
@@ -388,7 +388,7 @@
         "Vietnam": 0.01
       }
     },
-    "immigrant": {
+    "Immigrant": {
       "EN": {
         "Afghanistan": 0.04,
         "America": 0.01,
@@ -582,7 +582,7 @@
         "Vietnam": 0.0
       }
     },
-    "war criminal": {
+    "War criminal": {
       "EN": {
         "Afghanistan": 0.1,
         "America": 0.08,
@@ -776,7 +776,7 @@
         "Vietnam": 0.0
       }
     },
-    "narco": {
+    "Narco": {
       "EN": {
         "Afghanistan": 0.02,
         "America": 0.09,
@@ -972,7 +972,7 @@
     }
   },
   "migitation": {
-    "enemy": {
+    "Enemy": {
       "DE": {
         "Afghanistan": 0.06,
         "America": 0.07,
@@ -1134,7 +1134,7 @@
         "Vietnam": 0.0
       }
     },
-    "pirate": {
+    "Pirate": {
       "DE": {
         "Afghanistan": 0.01,
         "America": 0.04,
@@ -1296,7 +1296,7 @@
         "Vietnam": 0.02
       }
     },
-    "immigrant": {
+    "Immigrant": {
       "DE": {
         "Afghanistan": 0.0,
         "America": 0.0,
@@ -1458,7 +1458,7 @@
         "Vietnam": 0.0
       }
     },
-    "war criminal": {
+    "War criminal": {
       "DE": {
         "Afghanistan": 0.03,
         "America": 0.0,
@@ -1620,7 +1620,7 @@
         "Vietnam": 0.0
       }
     },
-    "narco": {
+    "Narco": {
       "DE": {
         "Afghanistan": 0.05,
         "America": 0.04,
