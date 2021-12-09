@@ -43,17 +43,22 @@ export const MapView = () => {
 
   return (
     <div>
+      <div className={classes.mapTitleBox}>
+        <div className={classes.mapTitle}>Bias in the original BERTs</div>
+        <div className={classes.mapTitle}>After applying mitigation</div>
+      </div>
       <div className={classes.map}>
         <Map getColorPoint={getColorPoint(BEFORE_DATA[attribute][language])} />
         <Map getColorPoint={getColorPoint(AFTER_DATA[attribute][language])} />
       </div>
-      <div>
+
+      {/* <div>
         <StackedBar
           data={getChartData(attribute, language)}
           attribute={attribute}
           displayTitle={false}
         />
-      </div>
+      </div> */}
       <RadioOption
         optionList={attributes}
         value={attribute}

@@ -2,3 +2,15 @@
   display: flex;
   flex-direction: row;
 }
+
+.mapTitleBox {
+  display: flex;
+  flex-direction: row;
+}
+
+.mapTitle {
+  width: 100%;
+  text-align: center;
+  padding-top: 10px;
+  font-size: 14px;
+}
