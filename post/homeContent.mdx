@@ -20,8 +20,6 @@ Then we propose two methods for mitigation; first using a multilingual model, an
 
 We define ethnic bias in BERT as the degree of variance of the probability of a country name given an attribute in a sentence without any relevant clues.
 
-<StackedBarView data={BEFORE_DATA} />
-
 We formally define normalized probability used in our ethnic bias metric.
 The metric is based on the change-of-probability of the target words given the presence or absence of an attribute word.
 _If a model predicts more uniform normalized probabilities to all target groups, the model's ethnic bias is lower._
@@ -32,6 +30,8 @@ On the contrary, for a model with a high ethnic bias, the CB score would also be
 
 The bias is easily seen in the chart above.
 Depending on the language in which the monolingual BERT is trained, different attributes are predicted for the same question.
+
+<StackedBarView data={BEFORE_DATA} />
 
 <br />
 
