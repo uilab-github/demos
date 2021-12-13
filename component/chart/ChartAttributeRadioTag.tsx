@@ -16,20 +16,22 @@ export const RadioOption = ({
   const attrRadioOptionElem = (option: string) => {
     const uuid: string = uuidv4();
     return (
-      <label className={classes.radioTagWrapper} key={uuid}>
+      <div className={classes.radioTagWrapper} key={uuid}>
         <input
-          id={option}
+          id={uuid}
           value={option}
           type="radio"
           checked={value === option}
           onChange={onChange}
         />
-        {option}
-      </label>
+        <label className={classes.radioTagWrapper} htmlFor={uuid}>
+          {option}
+        </label>
+      </div>
     );
   };
   return (
-    <div className={classes.radioTagWrapper}>
+    <div className={classes.radioTagsWrapper}>
       <span>{description}: </span>
       {optionList.map((oneData) => attrRadioOptionElem(oneData))}
     </div>
