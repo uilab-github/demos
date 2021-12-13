@@ -12,7 +12,7 @@ import { RadioOption } from './ChartAttributeRadioTag';
 import { StackedBar } from './StackedBarChart';
 
 import { useAppDispatch, useAppSelector } from '../../store/hook';
-import { updateRadio } from '../../store/modules/radioSlice';
+import { updateRadio } from '../../store/modules/radio';
 
 ChartJS.register(BarElement, LinearScale, CategoryScale, Title, Tooltip);
 
@@ -39,13 +39,14 @@ export const StackedBarView = ({ data }: TStackedBarViewProps) => {
     <>
       {attribute && (
         <>
-          <StackedBar data={data} attribute={attribute} />
           <RadioOption
             optionList={attributes}
             value={attribute}
             description={'Attributes'}
             onChange={(e) => dispatch(updateRadio(e.target.value))}
           />
+          <br />
+          <StackedBar data={data} attribute={attribute} />
         </>
       )}
     </>

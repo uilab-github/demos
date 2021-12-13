@@ -32,7 +32,7 @@ export const RadioOption = ({
   };
   return (
     <div className={classes.radioTagsWrapper}>
-      <span>{description}: </span>
+      <span className={classes.span}>{description}: </span>
       {optionList.map((oneData) => attrRadioOptionElem(oneData))}
     </div>
   );

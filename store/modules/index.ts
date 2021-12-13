@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import { HYDRATE } from 'next-redux-wrapper';
 
-import radio from './radioSlice';
+import radio from './radio';
 
 const reducer = (state, action) => {
   if (action.type === HYDRATE) {

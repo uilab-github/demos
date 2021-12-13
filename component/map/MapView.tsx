@@ -22,15 +22,6 @@ const getColorPoint = (nationDistribution: NationDistribution) => {
   };
 };
 
-const getChartData = (attribute: string, language: string): DataFormat => {
-  return {
-    [attribute]: {
-      ['Before']: BEFORE_DATA[attribute][language],
-      ['After']: AFTER_DATA[attribute][language],
-    },
-  };
-};
-
 export const MapView = () => {
   const attributes = Object.keys(AFTER_DATA);
   const baseAttribute = attributes[0];
@@ -52,13 +43,6 @@ export const MapView = () => {
         <Map getColorPoint={getColorPoint(AFTER_DATA[attribute][language])} />
       </div>
 
-      {/* <div>
-        <StackedBar
-          data={getChartData(attribute, language)}
-          attribute={attribute}
-          displayTitle={false}
-        />
-      </div> */}
       <RadioOption
         optionList={attributes}
         value={attribute}

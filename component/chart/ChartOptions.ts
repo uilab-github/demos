@@ -13,6 +13,7 @@ const getAspectRatio = (numberOfColumn: number) => {
     2: 6.5,
     5: 2.2,
     6: 1.9,
+    10: 1.32,
   };
   return ratioTable[numberOfColumn];
 };
@@ -79,6 +80,9 @@ const getBaseChartOptions = (): ChartOptions<'bar'> => ({
         display: true,
         text: 'Normalized probability',
       },
+      ticks: {
+        crossAlign: 'center',
+      },
     },
     y: {
       stacked: true,
@@ -111,9 +115,6 @@ export const getChartOptions = (
   };
   if (!displayTitle) {
     retChartOption.plugins.title.display = false;
-    // retChartOption.scales.x.title.display = false;
-    // retChartOption.scales.x.grid.display = false;
-    // retChartOption.scales.x.position = 'bottom';
     retChartOption.scales.x.display = false;
   }
   return retChartOption;
