@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useState } from 'react';
 import {
   Chart as ChartJS,
   BarElement,
@@ -11,9 +11,6 @@ import { DataFormat } from 'data/paperDataLoader';
 import { RadioOption } from './ChartAttributeRadioTag';
 import { StackedBar } from './StackedBarChart';
 
-import { useAppDispatch, useAppSelector } from '../../store/hook';
-import { updateRadio } from '../../store/modules/radio';
-
 ChartJS.register(BarElement, LinearScale, CategoryScale, Title, Tooltip);
 
 type TStackedBarViewProps = {
@@ -21,19 +18,9 @@ type TStackedBarViewProps = {
 };
 
 export const StackedBarView = ({ data }: TStackedBarViewProps) => {
-  const attribute = useAppSelector((state) => state.radio.value);
-  const dispatch = useAppDispatch();
-
   const attributes = Object.keys(data);
-
-  const isAttrubuteExist = attribute !== undefined;
-
-  useEffect(() => {
-    if (isAttrubuteExist) {
-      const baseAttribute = Object.keys(data)[0];
-      dispatch(updateRadio(baseAttribute));
-    }
-  }, [data, isAttrubuteExist, dispatch]);
+  const baseAttribute = attributes[0];
+  const [attribute, setAttribute] = useState(baseAttribute);
 
   return (
     <>
@@ -43,7 +30,7 @@ export const StackedBarView = ({ data }: TStackedBarViewProps) => {
             optionList={attributes}
             value={attribute}
             description={'Attributes'}
-            onChange={(e) => dispatch(updateRadio(e.target.value))}
+            onChange={(e) => setAttribute(e.target.value)}
           />
           <br />
           <StackedBar data={data} attribute={attribute} />

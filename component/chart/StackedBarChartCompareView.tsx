@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import {
   Chart as ChartJS,
   BarElement,
@@ -11,9 +11,6 @@ import { DataFormat } from 'data/paperDataLoader';
 import { RadioOption } from './ChartAttributeRadioTag';
 import { StackedBar } from './StackedBarChart';
 
-import { useAppDispatch, useAppSelector } from '../../store/hook';
-import { updateRadio } from '../../store/modules/radio';
-
 ChartJS.register(BarElement, LinearScale, CategoryScale, Title, Tooltip);
 
 const generateCompareFormData = (
@@ -22,7 +19,6 @@ const generateCompareFormData = (
   attribute: string
 ) => {
   const languages = Object.keys(afterData[attribute]);
-  console.log('in GenerateCompare', beforeData[attribute][languages[0]]);
   const retFormat = languages
     .map((language) => ({
       [' ' + language + ' \nprev']: beforeData[attribute][language],
@@ -48,22 +44,12 @@ export const StackedBarCompareView = ({
   beforeData,
   afterData,
 }: TStackedBarViewProps) => {
-  const attribute = useAppSelector((state) => state.radio.value);
-  const dispatch = useAppDispatch();
-
   const modes = ['Result only', 'Compare'];
 
-  const [isCompareMode, setIsCompareMode] = useState(false);
   const attributes = Object.keys(beforeData);
-
-  const isAttrubuteExist = attribute !== undefined;
-
-  useEffect(() => {
-    if (isAttrubuteExist) {
-      const baseAttribute = Object.keys(beforeData)[0];
-      dispatch(updateRadio(baseAttribute));
-    }
-  }, [beforeData, isAttrubuteExist, dispatch]);
+  const baseAttribute = attributes[0];
+  const [attribute, setAttribute] = useState(baseAttribute);
+  const [isCompareMode, setIsCompareMode] = useState(false);
 
   return (
     <>
@@ -73,7 +59,7 @@ export const StackedBarCompareView = ({
             optionList={attributes}
             value={attribute}
             description={'Attributes'}
-            onChange={(e) => dispatch(updateRadio(e.target.value))}
+            onChange={(e) => setAttribute(e.target.value)}
           />
           <RadioOption
             optionList={modes}
