@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Map } from './Map';
+import { MapWithTooltip } from './MapWithTooltip';
 import classes from './MapView.module.css';
 import {
   NationDistribution,
@@ -49,8 +49,12 @@ export const MapView = () => {
       <br />
 
       <div className={classes.map}>
-        <Map getColorPoint={getColorPoint(BEFORE_DATA[attribute][language])} />
-        <Map getColorPoint={getColorPoint(AFTER_DATA[attribute][language])} />
+        <MapWithTooltip
+          getColorPoint={getColorPoint(BEFORE_DATA[attribute][language])}
+        />
+        <MapWithTooltip
+          getColorPoint={getColorPoint(AFTER_DATA[attribute][language])}
+        />
       </div>
       <br />
 
