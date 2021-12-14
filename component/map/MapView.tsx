@@ -9,7 +9,6 @@ import { languageAbbrToFull, languageFullToAbbr } from '../util';
 
 import { BEFORE_DATA, AFTER_DATA, DataFormat } from 'data/paperDataLoader';
 import { RadioOption } from 'component/chart/ChartAttributeRadioTag';
-import { StackedBar } from 'component/chart/StackedBarChart';
 
 const getColorPoint = (nationDistribution: NationDistribution) => {
   return (geo) => {
@@ -34,15 +33,6 @@ export const MapView = () => {
 
   return (
     <div>
-      <div className={classes.mapTitleBox}>
-        <div className={classes.mapTitle}>Bias in the original BERTs</div>
-        <div className={classes.mapTitle}>After applying mitigation</div>
-      </div>
-      <div className={classes.map}>
-        <Map getColorPoint={getColorPoint(BEFORE_DATA[attribute][language])} />
-        <Map getColorPoint={getColorPoint(AFTER_DATA[attribute][language])} />
-      </div>
-
       <RadioOption
         optionList={attributes}
         value={attribute}
@@ -55,6 +45,20 @@ export const MapView = () => {
         description={'Language'}
         onChange={(e) => setLanguage(languageFullToAbbr(e.target.value))}
       />
+      <br />
+      <br />
+
+      <div className={classes.map}>
+        <Map getColorPoint={getColorPoint(BEFORE_DATA[attribute][language])} />
+        <Map getColorPoint={getColorPoint(AFTER_DATA[attribute][language])} />
+      </div>
+      <br />
+
+      <div className={classes.mapTitleBox}>
+        <div className={classes.mapTitle}>Bias in the original BERTs</div>
+        <div className={classes.mapTitle}>After applying mitigation</div>
+      </div>
+      <br />
     </div>
   );
 };

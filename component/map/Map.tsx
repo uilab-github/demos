@@ -33,7 +33,13 @@ export const Map = ({ getColorPoint }: MapChartProps) => (
             <Geography
               key={geo.rsmKey}
               geography={geo}
-              onClick={(e) => {}}
+              onClick={(e) => e.stopPropagation()}
+              onMouseEnter={(e) => {
+                return;
+              }}
+              onMouseLeave={(e) => {
+                return;
+              }}
               style={{
                 default: {
                   stroke: active ? '#FFFFFF' : '#DADFE8',
