@@ -5,16 +5,17 @@ import { scaleLinear } from 'd3-scale';
 import { getNationFromISOA3 } from 'component/chart/NationUtil';
 
 const colorScale = scaleLinear(
-  [-1.4 / 5, 0, 1 / 5, 2 / 5, 3 / 5, 4 / 5, 1, 6 / 5],
+  [0, 1 / 8, 2 / 8, 3 / 8, 4 / 8, 5 / 8, 6 / 8, 7 / 8, 1, 9 / 8],
   [
-    '#FFF1F0',
-    '#FFA39E',
-    '#FF7875',
-    '#FF4D4F',
-    '#F5222D',
-    '#CF1322',
-    '#A8071A',
-    '#820014',
+    '#ffd7cd',
+    '#ffc3b4',
+    '#feaf9c',
+    '#fb9a85',
+    '#f7856e',
+    '#f26f59',
+    '#ed5744',
+    '#e63a2f',
+    '#de021b',
   ]
 );
 
@@ -47,7 +48,7 @@ export const Map = ({ getColorPoint }: MapChartProps) => (
                   strokeWidth: 0.5,
                 },
                 hover: {
-                  fill: active ? colorScale(colorPoint + 1.5 / 5) : '#FFFFFF',
+                  fill: active ? colorScale(colorPoint + 1 / 4) : '#FFFFFF',
                   stroke: active ? '#FFFFFF' : '#DADFE8',
                   strokeWidth: 0.5,
                   cursor: active ? 'pointer' : 'default',

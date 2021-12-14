@@ -17,7 +17,7 @@ const getColorPoint = (nationDistribution: NationDistribution) => {
       return 0;
     }
     const distribution = nationDistribution[nation];
-    return Math.min(-1.5 / 6 + ((1.5 + 6) / 6) * distribution * 2.0, 1);
+    return Math.min(-1.5 / 8 + ((1.5 + 8) / 8) * distribution * 2.5, 1);
   };
 };
 
