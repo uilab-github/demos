@@ -2,44 +2,66 @@ import { Map } from './Map';
 import { NationDistribution } from 'component/chart/NationUtil';
 import { useState } from 'react';
 import ReactTooltip from 'react-tooltip';
-import Tooltip, { TTooltipProps } from './Tooltip';
+import styled from 'styled-components';
+
+export type ContentType = {
+  nation: string;
+  before: number;
+  after: number;
+};
 
 type MapWithTooltipProps = {
-  // distribution: NationDistribution;
+  distributions: NationDistribution[];
   getColorPoint: (geo: any) => number;
 };
 
+const TooltipWrapper = styled.div`
+  background-color: #222426;
+  opacity: 0.9;
+  padding: 8px 18px 8px 18px;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 12px;
+`;
+
+const TooltipHeader = styled.div`
+  font-size: 14px;
+  padding-bottom: 7px;
+`;
+
+const generateStyledContent = (content: ContentType) => (
+  <>
+    <TooltipHeader>{content.nation}</TooltipHeader>
+    <div>{`before: ${content.before}`}</div>
+    <div>{`after: ${content.after}`}</div>
+  </>
+);
+
+export const Wrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  margin: 0px 10px;
+`;
+
 export const MapWithTooltip = ({
-  // distribution,
+  distributions,
   getColorPoint,
 }: MapWithTooltipProps) => {
-  const [tooltipProps, setTooltipProps] = useState<TTooltipProps | undefined>(
-    undefined
-  );
+  const [content, setContent] = useState<ContentType | undefined>(undefined);
 
   return (
-    <>
+    <Wrapper>
       <Map
         getColorPoint={getColorPoint}
-        select={(value) => {
-          if (!value) {
-            setTooltipProps(undefined);
-          } else {
-            const { NAME } = value.geo.properties;
-            setTooltipProps({
-              position: value.position,
-              children: (
-                <>
-                  <p>{NAME}</p>
-                </>
-              ),
-            });
-            console.log({ NAME });
-          }
-        }}
-        // setTooltipProps={setTooltipProps}
+        setContent={setContent}
+        distributions={distributions}
       />
-      {tooltipProps && tooltipProps.children && <Tooltip {...tooltipProps} />}
-    </>
+      <ReactTooltip>
+        {content && (
+          <TooltipWrapper>{generateStyledContent(content)}</TooltipWrapper>
+        )}
+      </ReactTooltip>
+    </Wrapper>
   );
 };

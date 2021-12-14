@@ -17,7 +17,7 @@ const getColorPoint = (nationDistribution: NationDistribution) => {
       return 0;
     }
     const distribution = nationDistribution[nation];
-    return Math.min(-1.5 / 8 + ((1.5 + 8) / 8) * distribution * 2.5, 1);
+    return distribution;
   };
 };
 
@@ -51,9 +51,17 @@ export const MapView = () => {
       <div className={classes.map}>
         <MapWithTooltip
           getColorPoint={getColorPoint(BEFORE_DATA[attribute][language])}
+          distributions={[
+            BEFORE_DATA[attribute][language],
+            AFTER_DATA[attribute][language],
+          ]}
         />
         <MapWithTooltip
           getColorPoint={getColorPoint(AFTER_DATA[attribute][language])}
+          distributions={[
+            BEFORE_DATA[attribute][language],
+            AFTER_DATA[attribute][language],
+          ]}
         />
       </div>
       <br />
