@@ -48,29 +48,28 @@ export const MapView = () => {
       <br />
       <br />
 
-      <div className={classes.map}>
-        <MapWithTooltip
-          getColorPoint={getColorPoint(BEFORE_DATA[attribute][language])}
-          distributions={[
-            BEFORE_DATA[attribute][language],
-            AFTER_DATA[attribute][language],
-          ]}
-        />
-        <MapWithTooltip
-          getColorPoint={getColorPoint(AFTER_DATA[attribute][language])}
-          distributions={[
-            BEFORE_DATA[attribute][language],
-            AFTER_DATA[attribute][language],
-          ]}
-        />
+      <div className={classes.maps}>
+        <div className={classes.map}>
+          <MapWithTooltip
+            getColorPoint={getColorPoint(BEFORE_DATA[attribute][language])}
+            distributions={[
+              BEFORE_DATA[attribute][language],
+              AFTER_DATA[attribute][language],
+            ]}
+          />
+          <div className={classes.mapTitle}>Bias in the original BERTs</div>
+        </div>
+        <div className={classes.map}>
+          <MapWithTooltip
+            getColorPoint={getColorPoint(AFTER_DATA[attribute][language])}
+            distributions={[
+              BEFORE_DATA[attribute][language],
+              AFTER_DATA[attribute][language],
+            ]}
+          />
+          <div className={classes.mapTitle}>After applying mitigation</div>
+        </div>
       </div>
-      <br />
-
-      <div className={classes.mapTitleBox}>
-        <div className={classes.mapTitle}>Bias in the original BERTs</div>
-        <div className={classes.mapTitle}>After applying mitigation</div>
-      </div>
-      <br />
     </div>
   );
 };

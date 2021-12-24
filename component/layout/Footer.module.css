@@ -22,7 +22,7 @@
   text-decoration: underline;
 }
 
-@media (min-width: 900px) {
+@media only screen and (min-width: 900px) {
   .footerInliner {
     width: 900px;
   }

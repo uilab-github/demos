@@ -1,13 +1,12 @@
 .radioTagsWrapper {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   color: rgb(71, 81, 92);
 }
 
 .radioTagWrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  display: inline-block;
   color: rgb(71, 81, 92);
 }
 

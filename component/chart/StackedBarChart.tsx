@@ -7,6 +7,7 @@ import {
   Tooltip,
   Plugin,
 } from 'chart.js';
+import classes from './StackedBarChart.module.css';
 import { Bar } from 'react-chartjs-2';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { DataFormat } from 'data/paperDataLoader';
@@ -50,6 +51,9 @@ export const StackedBar = ({
       data={generateChartData(data[attribute])}
       options={getChartOptions(attribute, numberOfLanguage, displayTitle)}
       plugins={[ChartDataLabels, multilinePlugin]}
+      width={828}
+      height={435}
+      style={{ position: 'relative', width: '100%' }}
     />
   );
 };

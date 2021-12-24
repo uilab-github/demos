@@ -30,7 +30,8 @@ const getBaseChartOptions = (): ChartOptions<'bar'> => ({
       barThickness: 30,
     },
   },
-  responsive: true,
+  responsive: false,
+  maintainAspectRatio: false,
   plugins: {
     legend: {
       display: false,
