@@ -8,8 +8,8 @@ import {
   Tooltip,
 } from 'chart.js';
 import { DataFormat } from 'data/paperDataLoader';
-import { RadioOption } from './ChartAttributeRadioTag';
-import { StackedBar } from './StackedBarChart';
+import RadioOption from './ChartAttributeRadioTag';
+import StackedBar from './StackedBarChart';
 
 ChartJS.register(BarElement, LinearScale, CategoryScale, Title, Tooltip);
 
@@ -17,7 +17,7 @@ type TStackedBarViewProps = {
   data: DataFormat;
 };
 
-export const StackedBarView = ({ data }: TStackedBarViewProps) => {
+const StackedBarView = ({ data }: TStackedBarViewProps) => {
   const attributes = Object.keys(data);
   const baseAttribute = attributes[0];
   const [attribute, setAttribute] = useState(baseAttribute);
@@ -39,3 +39,5 @@ export const StackedBarView = ({ data }: TStackedBarViewProps) => {
     </>
   );
 };
+
+export default StackedBarView;

@@ -13,7 +13,6 @@ const Home: NextPage = () => {
         <MDXProvider components={editorStyle}>
           <HomeContent />
         </MDXProvider>
-        {/* <HomeContent components={editorStyle} /> */}
       </div>
     </Layout>
   );

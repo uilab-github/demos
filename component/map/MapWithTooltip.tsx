@@ -1,5 +1,5 @@
 import { Map } from './Map';
-import { NationDistribution } from 'component/chart/NationUtil';
+import { NationDistribution } from 'component/nationUtil';
 import { useState } from 'react';
 import ReactTooltip from 'react-tooltip';
 import styled from 'styled-components';
@@ -38,13 +38,13 @@ const generateStyledContent = (content: ContentType) => (
   </>
 );
 
-export const Wrapper = styled.div`
+const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   margin: 0px 10px;
 `;
 
-export const MapWithTooltip = ({
+const MapWithTooltip = ({
   distributions,
   getColorPoint,
 }: MapWithTooltipProps) => {
@@ -65,3 +65,5 @@ export const MapWithTooltip = ({
     </Wrapper>
   );
 };
+
+export default MapWithTooltip;

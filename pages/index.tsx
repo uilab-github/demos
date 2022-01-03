@@ -1,3 +1,4 @@
-import Home from '../component/Home';
+// import Home from '../component/Home';
 
-export default Home;
+// export default Home;
+export default <div></div>;

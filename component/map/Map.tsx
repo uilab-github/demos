@@ -7,10 +7,7 @@ import {
 } from 'react-simple-maps';
 import geography from '../../data/geography.json';
 import { scaleLinear } from 'd3-scale';
-import {
-  getNationFromISOA3,
-  NationDistribution,
-} from 'component/chart/NationUtil';
+import { getNationFromISOA3, NationDistribution } from 'component/nationUtil';
 import { ContentType } from './MapWithTooltip';
 
 const colorScale = scaleLinear(

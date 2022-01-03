@@ -1,4 +1,4 @@
-import { NationDistribution } from '../component/chart/NationUtil';
+import { NationDistribution } from 'component/nationUtil';
 import rawData from './paperData.json';
 
 export interface DataFormat {

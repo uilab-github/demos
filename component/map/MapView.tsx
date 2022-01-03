@@ -1,14 +1,11 @@
 import { useState } from 'react';
-import { MapWithTooltip } from './MapWithTooltip';
+import MapWithTooltip from './MapWithTooltip';
 import classes from './MapView.module.css';
-import {
-  NationDistribution,
-  getNationFromISOA3,
-} from 'component/chart/NationUtil';
-import { languageAbbrToFull, languageFullToAbbr } from '../util';
+import { NationDistribution, getNationFromISOA3 } from 'component/nationUtil';
+import { languageAbbrToFull, languageFullToAbbr } from '../languageUtil';
 
 import { BEFORE_DATA, AFTER_DATA, DataFormat } from 'data/paperDataLoader';
-import { RadioOption } from 'component/chart/ChartAttributeRadioTag';
+import RadioOption from 'component/chart/ChartAttributeRadioTag';
 
 const getColorPoint = (nationDistribution: NationDistribution) => {
   return (geo) => {
@@ -21,7 +18,7 @@ const getColorPoint = (nationDistribution: NationDistribution) => {
   };
 };
 
-export const MapView = () => {
+const MapView = () => {
   const attributes = Object.keys(AFTER_DATA);
   const baseAttribute = attributes[0];
 
@@ -73,3 +70,5 @@ export const MapView = () => {
     </div>
   );
 };
+
+export default MapView;

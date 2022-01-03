@@ -3,7 +3,7 @@ import {
   getAbbrNameFromNation,
   getColorOfNationAbbr,
   getNations,
-} from './NationUtil';
+} from 'component/nationUtil';
 import { ChartData, ChartDataset } from 'chart.js';
 
 export const generateChartData = (
