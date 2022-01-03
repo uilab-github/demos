@@ -51,8 +51,9 @@ export const StackedBar = ({
       data={generateChartData(data[attribute])}
       options={getChartOptions(attribute, numberOfLanguage, displayTitle)}
       plugins={[ChartDataLabels, multilinePlugin]}
+      // it is need to make the size of chart great
       width={828}
-      height={435}
+      height={60 + numberOfLanguage * 64}
       style={{ position: 'relative', width: '100%' }}
     />
   );

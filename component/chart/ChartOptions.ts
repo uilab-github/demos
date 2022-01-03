@@ -33,6 +33,9 @@ const getBaseChartOptions = (): ChartOptions<'bar'> => ({
   responsive: false,
   maintainAspectRatio: false,
   plugins: {
+    tooltip: {
+      enabled: false,
+    },
     legend: {
       display: false,
       onClick: (e) => {},
