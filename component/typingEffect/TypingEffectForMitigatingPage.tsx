@@ -32,7 +32,7 @@ const answerSet = [
   ],
 ];
 
-export const TypingEffect = () => {
+const TypingEffect = () => {
   return (
     <div className={classes.typewriter}>
       <Typewriter
@@ -75,3 +75,5 @@ export const TypingEffect = () => {
     </div>
   );
 };
+
+export default TypingEffect;
