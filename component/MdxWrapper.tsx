@@ -1,5 +1,5 @@
 import React from 'react';
-import HomeContent from '../post/homeContent.mdx';
+import EthnicBiasDemo from '../post/EthnicBiasDemo.mdx';
 import Layout from './layout/Layout';
 import classes from './Home.module.css';
 import { editorStyle } from 'styles/editorStyle';
@@ -13,10 +13,7 @@ const Home = (Content) => {
   return (
     <Layout title={'U&I Lab Demo'}>
       <div className={classes.contentContainer}>
-        <MDXProvider components={editorStyle}>
-          <HomeContent />
-          {/* <Content /> */}
-        </MDXProvider>
+        <MDXProvider components={editorStyle}>{Content}</MDXProvider>
       </div>
     </Layout>
   );

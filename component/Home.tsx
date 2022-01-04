@@ -1,6 +1,6 @@
 import React from 'react';
 import { NextPage } from 'next';
-import HomeContent from '../post/homeContent.mdx';
+import EthnicBiasDemo from '../post/EthnicBiasDemo.mdx';
 import Layout from './layout/Layout';
 import classes from './Home.module.css';
 import { editorStyle } from 'styles/editorStyle';
@@ -11,7 +11,7 @@ const Home: NextPage = () => {
     <Layout title={'U&I Lab Demo'}>
       <div className={classes.contentContainer}>
         <MDXProvider components={editorStyle}>
-          <HomeContent />
+          <EthnicBiasDemo />
         </MDXProvider>
       </div>
     </Layout>

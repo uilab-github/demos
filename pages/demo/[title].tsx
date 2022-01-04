@@ -1,10 +1,10 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 // import { useRouter } from 'next/router';
-import HomeContent from '../../post/homeContent.mdx';
+import EthnicBiasDemo from '../../post/EthnicBiasDemo.mdx';
 import Wrapper from 'component/MdxWrapper';
 
 const titlesToPage = {
-  'Mitigating-Language-Dependent-Ethnic-Bias-in-BERT': HomeContent,
+  'Mitigating-Language-Dependent-Ethnic-Bias-in-BERT': EthnicBiasDemo,
 };
 
 type Props = {
