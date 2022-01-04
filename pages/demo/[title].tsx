@@ -1,22 +1,13 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
-// import { useRouter } from 'next/router';
-import EthnicBiasDemo from '../../post/EthnicBiasDemo.mdx';
 import Wrapper from 'component/MdxWrapper';
-
-const titlesToPage = {
-  'Mitigating-Language-Dependent-Ethnic-Bias-in-BERT': EthnicBiasDemo,
-};
+import pageMap from 'data/pageMap';
 
 type Props = {
-  title?: string;
-  errors?: string;
+  title: string;
 };
 
-const Demos = ({ title, errors }: Props) => {
-  if (errors) {
-    return <div>Error Occur: {errors}</div>;
-  }
-  const Content = titlesToPage[title];
+const Demos = ({ title }: Props) => {
+  const Content = pageMap[title];
   return Wrapper(<Content />);
 };
 
@@ -30,16 +21,12 @@ const getPaths = (titles: string[]) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: getPaths(Object.keys(titlesToPage)),
+    paths: getPaths(Object.keys(pageMap)),
     fallback: false,
   };
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  try {
-    const title = params?.title as string;
-    return { props: { title: title } };
-  } catch (Error) {
-    return { props: { errors: Error.message } };
-  }
+  const title = params?.title as string;
+  return { props: { title: title } };
 };

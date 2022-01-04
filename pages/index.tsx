@@ -1,3 +1,11 @@
-import Home from '../component/Home';
+import Layout from 'component/layout/Layout';
 
-export default Home;
+const HomePage = () => {
+  return (
+    <Layout title={'U&I Lab Demo'}>
+      <div>Hello World!</div>
+    </Layout>
+  );
+};
+
+export default HomePage;

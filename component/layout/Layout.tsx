@@ -1,5 +1,5 @@
 import CustomHead from './CustomHead';
-import TopNavBar from './TopNavBar';
+import TopNavBar from './TopNavBarForDemo.module';
 import Footer from './Footer';
 import classes from './Layout.module.css';
 
