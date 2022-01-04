@@ -1,19 +1,18 @@
 import CustomHead from './CustomHead';
-import TopNavBar from './TopNavBarForDemo.module';
 import Footer from './Footer';
 import classes from './Layout.module.css';
 
-const Layout = ({
-  title,
-  children,
-}: {
+type TLayout = {
   title: string;
   children: React.ReactNode;
-}) => {
+  TopNavBar?: () => JSX.Element;
+};
+
+const Layout = ({ title, children, TopNavBar }: TLayout) => {
   return (
     <div className={classes.layout}>
       <CustomHead title={title} />
-      <TopNavBar />
+      {TopNavBar && <TopNavBar />}
       <main className={classes.main}>{children}</main>
       <Footer />
     </div>

@@ -1,21 +1,22 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
-import Wrapper from 'component/MdxWrapper';
+import DemoPageLayout from 'component/layout/DemoPageLayout';
 import pageMap from 'data/pageMap';
 
 type Props = {
-  title: string;
+  url: string;
 };
 
-const Demos = ({ title }: Props) => {
-  const Content = pageMap[title];
-  return Wrapper(<Content />);
+const Demos = ({ url }: Props) => {
+  const Content = pageMap[url];
+
+  return DemoPageLayout(url);
 };
 
 export default Demos;
 
-const getPaths = (titles: string[]) => {
-  return titles.map((title) => ({
-    params: { title: title },
+const getPaths = (validUrls: string[]) => {
+  return validUrls.map((url) => ({
+    params: { url: url },
   }));
 };
 
@@ -27,6 +28,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const title = params?.title as string;
-  return { props: { title: title } };
+  const url = params?.url as string;
+  return { props: { url: url } };
 };

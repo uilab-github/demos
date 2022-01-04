@@ -3,7 +3,12 @@ import TopNavElement from './TopNavElement';
 import GithubIcon from 'public/github.svg';
 import PaperIcon from 'public/paper.svg';
 
-const TopNavBar = () => {
+type TTopNavBar = {
+  paperUrl?: string;
+  githubUrl?: string;
+};
+
+const TopNavBar = ({ paperUrl, githubUrl }: TTopNavBar) => {
   return (
     <header className={classes.header}>
       <div className={classes.padding}>
@@ -21,12 +26,16 @@ const TopNavBar = () => {
           </div>
         </a>
         <ul>
-          <TopNavElement name="Paper" link="https://arxiv.org/abs/2109.05704">
-            <PaperIcon />
-          </TopNavElement>
-          <TopNavElement name="Code" link="https://github.com/jaimeenahn">
-            <GithubIcon />
-          </TopNavElement>
+          {paperUrl && (
+            <TopNavElement name="Paper" link={paperUrl}>
+              <PaperIcon />
+            </TopNavElement>
+          )}
+          {githubUrl && (
+            <TopNavElement name="Code" link={githubUrl}>
+              <GithubIcon />
+            </TopNavElement>
+          )}
         </ul>
       </div>
     </header>
