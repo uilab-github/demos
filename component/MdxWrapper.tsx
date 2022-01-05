@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './Home.module.css';
+import classes from './MdxWrapper.module.css';
 import { editorStyle } from 'styles/editorStyle';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXProps } from 'mdx/types';
