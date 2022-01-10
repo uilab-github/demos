@@ -3,52 +3,62 @@ import classes from 'component/WordTag.module.css';
 type TWordTag = {
   word: string;
   tag: string;
-  color?: 'red' | 'pink' | 'fuchsia' | 'cyan' | 'emerald';
+  wordColorClass?: string;
+  tagColorClass?: string;
 };
 
-export const WordTagRed = ({ word, tag }: TWordTag) => {
+const WordTag = ({ word, tag, wordColorClass, tagColorClass }: TWordTag) => {
   return (
-    <span className={`${classes.word} ${classes.wordRed}`}>
+    <span className={`${classes.word} ${wordColorClass}`}>
       {word}
-      <span className={`${classes.tag} ${classes.tagRed}`}>{tag}</span>
+      <span className={`${classes.tag} ${tagColorClass}`}>{tag}</span>
     </span>
   );
 };
 
-export const WordTagPink = ({ word, tag }: TWordTag) => {
-  return (
-    <span className={`${classes.word} ${classes.wordPink}`}>
-      {word}
-      <span className={`${classes.tag} ${classes.tagPink}`}>{tag}</span>
-    </span>
-  );
-};
+export const WordTagRed = ({ word, tag }: TWordTag) => (
+  <WordTag
+    word={word}
+    tag={tag}
+    wordColorClass={classes.wordRed}
+    tagColorClass={classes.tagRed}
+  />
+);
 
-export const WordTagFuchsia = ({ word, tag }: TWordTag) => {
-  return (
-    <span className={`${classes.word} ${classes.wordFuchsia}`}>
-      {word}
-      <span className={`${classes.tag} ${classes.tagFuchsia}`}>{tag}</span>
-    </span>
-  );
-};
+export const WordTagPink = ({ word, tag }: TWordTag) => (
+  <WordTag
+    word={word}
+    tag={tag}
+    wordColorClass={classes.wordPink}
+    tagColorClass={classes.tagPink}
+  />
+);
 
-export const WordTagCyan = ({ word, tag }: TWordTag) => {
-  return (
-    <span className={`${classes.word} ${classes.wordCyan}`}>
-      {word}
-      <span className={`${classes.tag} ${classes.tagCyan}`}>{tag}</span>
-    </span>
-  );
-};
+export const WordTagFuchsia = ({ word, tag }: TWordTag) => (
+  <WordTag
+    word={word}
+    tag={tag}
+    wordColorClass={classes.wordFuchsia}
+    tagColorClass={classes.tagFuchsia}
+  />
+);
 
-export const WordTagEmerald = ({ word, tag }: TWordTag) => {
-  return (
-    <span className={`${classes.word} ${classes.wordEmerald}`}>
-      {word}
-      <span className={`${classes.tag} ${classes.tagEmerald}`}>{tag}</span>
-    </span>
-  );
-};
+export const WordTagCyan = ({ word, tag }: TWordTag) => (
+  <WordTag
+    word={word}
+    tag={tag}
+    wordColorClass={classes.wordCyan}
+    tagColorClass={classes.tagCyan}
+  />
+);
+
+export const WordTagEmerald = ({ word, tag }: TWordTag) => (
+  <WordTag
+    word={word}
+    tag={tag}
+    wordColorClass={classes.wordEmerald}
+    tagColorClass={classes.tagEmerald}
+  />
+);
 
 export default WordTagRed;
