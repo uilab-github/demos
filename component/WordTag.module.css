@@ -1,0 +1,76 @@
+.word {
+  border-radius: 0.25rem;
+
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+}
+
+.tag {
+  font-size: 0.75rem;
+  line-height: 1;
+  border-radius: 0.25rem;
+
+  padding-left: 0.125rem;
+  padding-right: 0.125rem;
+
+  font-weight: 600;
+  margin-left: 0.25rem;
+}
+
+/* 
+https://tailwindcss.com/docs/text-color
+100 800 
+*/
+.wordRed {
+  background-color: rgba(254, 226, 226, 1);
+  color: rgba(153, 27, 27, 1);
+}
+
+/* 500 100 */
+.tagRed {
+  background-color: rgba(239, 68, 68, 1);
+  color: rgba(254, 226, 226, 1);
+}
+
+.wordPink {
+  background-color: rgba(252, 231, 243, 1);
+  color: rgba(157, 23, 77, 1);
+}
+
+.tagPink {
+  background-color: rgba(236, 72, 153, 1);
+  color: rgba(252, 231, 243, 1);
+}
+
+.wordFuchsia {
+  background-color: rgba(250, 232, 255, 1);
+  color: rgba(134, 25, 143, 1);
+}
+
+.tagFuchsia {
+  background-color: rgba(217, 70, 239, 1);
+  color: rgba(250, 232, 255, 1);
+}
+
+.wordCyan {
+  background-color: rgba(207, 250, 254, 1);
+  color: rgba(21, 94, 117, 1);
+}
+
+.tagCyan {
+  background-color: rgba(6, 182, 212, 1);
+  color: rgba(207, 250, 254, 1);
+}
+
+.wordEmerald {
+  background-color: rgba(209, 250, 229, 1);
+  color: rgba(6, 95, 70, 1);
+}
+
+.tagEmerald {
+  background-color: rgba(16, 195, 129, 1);
+  color: rgba(209, 250, 229, 1);
+}
