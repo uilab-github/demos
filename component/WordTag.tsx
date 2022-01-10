@@ -1,63 +1,80 @@
 import classes from 'component/WordTag.module.css';
 
 type TWordTag = {
-  word: string;
-  tag: string;
-  wordColorClass?: string;
+  content: React.ReactNode;
+  tag: React.ReactNode;
+  contentColorClass?: string;
   tagColorClass?: string;
+  isBigger?: boolean;
 };
 
-const WordTag = ({ word, tag, wordColorClass, tagColorClass }: TWordTag) => {
-  return (
-    <span className={`${classes.word} ${wordColorClass}`}>
-      {word}
+const WordTag = ({
+  content,
+  tag,
+  contentColorClass,
+  tagColorClass,
+  isBigger,
+}: TWordTag) => {
+  return isBigger ? (
+    <span className={`${classes.biggerContent} ${contentColorClass}`}>
+      {content}
+      <span className={`${classes.tag} ${tagColorClass}`}>{tag}</span>
+    </span>
+  ) : (
+    <span className={`${classes.content} ${contentColorClass}`}>
+      {content}
       <span className={`${classes.tag} ${tagColorClass}`}>{tag}</span>
     </span>
   );
 };
 
-export const WordTagRed = ({ word, tag }: TWordTag) => (
+export const WordTagRed = ({ content, tag, isBigger }: TWordTag) => (
   <WordTag
-    word={word}
+    content={content}
     tag={tag}
-    wordColorClass={classes.wordRed}
+    contentColorClass={classes.contentRed}
     tagColorClass={classes.tagRed}
+    isBigger={isBigger}
   />
 );
 
-export const WordTagPink = ({ word, tag }: TWordTag) => (
+export const WordTagPink = ({ content, tag, isBigger }: TWordTag) => (
   <WordTag
-    word={word}
+    content={content}
     tag={tag}
-    wordColorClass={classes.wordPink}
+    contentColorClass={classes.contentPink}
     tagColorClass={classes.tagPink}
+    isBigger={isBigger}
   />
 );
 
-export const WordTagFuchsia = ({ word, tag }: TWordTag) => (
+export const WordTagFuchsia = ({ content, tag, isBigger }: TWordTag) => (
   <WordTag
-    word={word}
+    content={content}
     tag={tag}
-    wordColorClass={classes.wordFuchsia}
+    contentColorClass={classes.contentFuchsia}
     tagColorClass={classes.tagFuchsia}
+    isBigger={isBigger}
   />
 );
 
-export const WordTagCyan = ({ word, tag }: TWordTag) => (
+export const WordTagCyan = ({ content, tag, isBigger }: TWordTag) => (
   <WordTag
-    word={word}
+    content={content}
     tag={tag}
-    wordColorClass={classes.wordCyan}
+    contentColorClass={classes.contentCyan}
     tagColorClass={classes.tagCyan}
+    isBigger={isBigger}
   />
 );
 
-export const WordTagEmerald = ({ word, tag }: TWordTag) => (
+export const WordTagEmerald = ({ content, tag, isBigger }: TWordTag) => (
   <WordTag
-    word={word}
+    content={content}
     tag={tag}
-    wordColorClass={classes.wordEmerald}
+    contentColorClass={classes.contentEmerald}
     tagColorClass={classes.tagEmerald}
+    isBigger={isBigger}
   />
 );
 

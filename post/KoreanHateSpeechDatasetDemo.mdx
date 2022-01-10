@@ -26,21 +26,23 @@ sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mi
 
 ## How does the model detect hate sppech?
 
-(Component that find hate word in a user input) Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+(Component that find hate content in a user input) Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 <br />
 
 ## Text for tag
 
-My name is <WordTagRed word='Wolfgang' tag='PER' /> and I live in Berlin
+My name is <WordTagRed content='Wolfgang' tag='PER' /> and I live in Berlin
 
-My name is <WordTagPink word='Wolfgang' tag='PER' /> and I live in Berlin
+My name is <WordTagPink content='Wolfgang' tag='PER' /> and I live in Berlin
 
-My name is <WordTagFuchsia word='Wolfgang' tag='PER' /> and I live in Berlin
+My name is <WordTagFuchsia content='Wolfgang' tag='PER' /> and I live in Berlin
 
-My name is <WordTagCyan word='Wolfgang' tag='PER' /> and I live in Berlin
+My name is <WordTagCyan content='Wolfgang' tag='PER' /> and I live in Berlin
 
-My name is <WordTagEmerald word='Wolfgang' tag='PER' /> and I live in Berlin
+My name is <WordTagEmerald content='Wolfgang' tag='GROUP'/> and I live in Berlin
+
+My name is <WordTagRed content={<WordTagEmerald content='Wolfgang' tag='GROUP'/>} tag='PER' isBigger={true}/> and I live in Berlin
 
 <br />
 
