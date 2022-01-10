@@ -5,3 +5,25 @@
   width: 100%;
   column-gap: 20px;
 }
+
+.card {
+  display: flex;
+  flex-direction: column;
+  font-size: 13.33px;
+}
+
+.card > span {
+  display: block;
+}
+
+.card .red {
+  color: rgba(242, 43, 43);
+}
+
+.card .blue {
+  color: rgba(35, 93, 255);
+}
+
+.card .green {
+  color: rgba(10, 143, 107);
+}
