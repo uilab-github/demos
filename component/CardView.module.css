@@ -9,7 +9,7 @@
 .card {
   display: flex;
   flex-direction: column;
-  font-size: 13.33px;
+  font-size: 13px;
 }
 
 .card > span {
@@ -26,4 +26,9 @@
 
 .card .green {
   color: rgba(10, 143, 107);
+}
+
+.card .bold {
+  font-weight: bold;
+  /* color: rgba(242, 43, 43); */
 }
