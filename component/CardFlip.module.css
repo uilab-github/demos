@@ -26,5 +26,6 @@
 
 .cardBack {
   border: solid 1px rgb(140, 150, 163);
-  /* padding-top: 18px; */
+  flex-direction: column;
+  justify-content: center;
 }

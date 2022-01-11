@@ -1,13 +1,6 @@
-import { title } from 'process';
 import CardFlip from './CardFlip';
 import classes from './CardView.module.css';
-import {
-  WordTagRed,
-  WordTagCyan,
-  WordTagEmerald,
-  WordTagFuchsia,
-  WordTagPink,
-} from './WordTag';
+import WordTag from './WordTagSentence';
 
 interface CardContent {
   front: React.ReactNode;
@@ -22,22 +15,22 @@ type TCardFrontFormatter = {
 const CardFrontFormatter = ({ title, comment }: TCardFrontFormatter) => (
   <div className={classes.card}>
     <span>
-      <b className={classes.green}>Title: </b>
+      <span className={classes.green}>Title: </span>
       <br />
       {title}
     </span>
     <br />
     <span>
-      <b className={classes.blue}>Comment: </b>
+      <span className={classes.blue}>Comment: </span>
       <br />
       {comment}
     </span>
     <br />
     <span>
-      <b className={classes.red}>Question: </b>
+      <span className={classes.red}>Question: </span>
       <br />
-      Is this comment <span className={classes.bold}>offensive?</span> If so,{' '}
-      <span className={classes.bold}> who is the target? </span>
+      Is this comment <span className={classes.italic}>offensive?</span> <br />
+      If so, <span className={classes.italic}> who is the target? </span>
       <br />
     </span>
   </div>
@@ -45,33 +38,68 @@ const CardFrontFormatter = ({ title, comment }: TCardFrontFormatter) => (
 
 type TCardBackFormatter = {
   isAggressive?: boolean;
+  offensiveSpan?: string;
+  target?: string;
   targetGroup?: string;
-  taggedComment: React.ReactNode;
+  taggedComment?: React.ReactNode;
 };
 
 const CardBackFormatter = ({
-  isAggressive,
+  offensiveSpan,
+  target,
   targetGroup,
   taggedComment,
-}: TCardBackFormatter) => (
-  <div className={classes.card}>
-    <span>
-      <b>Classification: </b>
-      The comment is aggressive.
-    </span>
-    <br />
-    {targetGroup && (
-      <>
-        <span>
-          <b>Target Group: </b>
-          {targetGroup}
+}: TCardBackFormatter) => {
+  const isAggressive = offensiveSpan ? true : false;
+  return (
+    <div className={classes.card}>
+      <span>
+        <span>Classification: </span>
+        <br />
+        <span className={isAggressive ? classes.red : classes.green}>
+          {isAggressive ? 'Aggressive ' : 'Not aggressive '} comment
+          <br />
         </span>
         <br />
-      </>
-    )}
-    <span>{taggedComment}</span>
-  </div>
-);
+      </span>
+      {target && (
+        <>
+          <span>
+            <span>Target: </span>
+            <br />
+            <span className={classes.blue}>
+              {target}
+              <br />
+              {targetGroup}
+            </span>
+          </span>
+          <br />
+        </>
+      )}
+      {offensiveSpan && (
+        <>
+          <span>
+            <span>Offensive span: </span>
+            <br />
+            {offensiveSpan}
+          </span>
+        </>
+      )}
+
+      {/* {targetGroup && (
+        <>
+          <br />
+          <span>
+            <b>Target Group: </b>
+            <br />
+            
+          </span>
+        </>
+      )} */}
+      {/* <span>{taggedComment}</span> */}
+    </div>
+  );
+};
 
 const cardData: CardContent[] = [
   {
@@ -90,8 +118,16 @@ const cardData: CardContent[] = [
         comment="늙은이들은 젠더이슈에 대해서 그냥 입닥치고 있어ㅋㅋ 지들이 다 망쳐놓고선"
       />
     ),
-    // 공격적 - 집단 - 기타 - 나이
-    back: <CardBackFormatter taggedComment={`Card4 Back`} />,
+    back: (
+      <CardBackFormatter
+        offensiveSpan={'늙은이들은 젠더이슈에 대해서 그냥 입닥치고 있어ㅋㅋ 지들이 다 망쳐놓고선'.slice(
+          6,
+          39
+        )}
+        target="group"
+        targetGroup="집단-기타-나이"
+      />
+    ),
   },
 
   {
@@ -101,8 +137,16 @@ const cardData: CardContent[] = [
         comment="대한민국 여자들 죄다 군대 보내버려 잡소리할거면"
       />
     ),
-    // 공격적 - 집단 - 성 정체성  - 여성,
-    back: <CardBackFormatter taggedComment={`Card2 Back`} />,
+    back: (
+      <CardBackFormatter
+        offensiveSpan={'대한민국 여자들 죄다 군대 보내버려 잡소리할거면'.slice(
+          0,
+          25
+        )}
+        target="group"
+        targetGroup="집단-성 정체성-여성"
+      />
+    ),
   },
   {
     front: (
@@ -111,7 +155,18 @@ const cardData: CardContent[] = [
         comment="이럴 줄 알았다 어디서 쌩 구라를 쳐"
       />
     ),
-    back: <CardBackFormatter taggedComment={`Card3 Back`} />,
+    back: (
+      <CardBackFormatter
+        // taggedComment={
+        //   <WordTag
+        //     sentence="이럴 줄 알았다 어디서 쌩 구라를 쳐"
+        //     offensive={{ startIndex: 0, endIndex: 20 }}
+        //   />
+        // }
+        offensiveSpan={'이럴 줄 알았다 어디서 쌩 구라를 쳐'.slice(0, 20)}
+        target="not specified"
+      />
+    ),
   },
 ];
 

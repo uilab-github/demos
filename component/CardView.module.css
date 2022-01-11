@@ -30,5 +30,8 @@
 
 .card .bold {
   font-weight: bold;
-  /* color: rgba(242, 43, 43); */
+}
+
+.card .italic {
+  font-style: italic;
 }
