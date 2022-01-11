@@ -38,6 +38,16 @@ export const WordTagRed = ({ content, tag, isBigger }: TWordTag) => (
   />
 );
 
+export const WordTagOrange = ({ content, tag, isBigger }: TWordTag) => (
+  <WordTag
+    content={content}
+    tag={tag}
+    contentColorClass={classes.contentOrange}
+    tagColorClass={classes.tagOrange}
+    isBigger={isBigger}
+  />
+);
+
 export const WordTagPink = ({ content, tag, isBigger }: TWordTag) => (
   <WordTag
     content={content}

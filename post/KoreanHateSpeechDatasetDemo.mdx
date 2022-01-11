@@ -7,6 +7,8 @@ import WordTag, {
   WordTagCyan,
   WordTagEmerald,
 } from '../component/WordTag.tsx';
+import WordTagSentence from '../component/WordTagSentence.tsx';
+import TempTest from '../component/Temp.tsx';
 
 # [Dataset Name]: Korean Hate Speech Dataset
 
@@ -42,7 +44,11 @@ My name is <WordTagCyan content='Wolfgang' tag='PER' /> and I live in Berlin
 
 My name is <WordTagEmerald content='Wolfgang' tag='GROUP'/> and I live in Berlin
 
-My name is <WordTagRed content={<WordTagEmerald content='Wolfgang' tag='GROUP'/>} tag='PER' isBigger={true}/> and I live in Berlin
+My name is <WordTagRed content={<WordTagFuchsia content='My name is My name is My name is My name is My name is My name is My name is My name is My name is My name isWolfgang' tag='GROUP'/>} tag='PER' isBigger={true}/> and I live in Berlin
+
+WordTagSentence:
+
+<TempTest />
 
 <br />
 

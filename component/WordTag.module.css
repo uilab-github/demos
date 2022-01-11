@@ -1,4 +1,7 @@
 .content {
+  line-height: 2;
+  /* font-weight: 600; */
+
   border-radius: 0.25rem;
 
   padding-left: 0.125rem;
@@ -11,22 +14,24 @@
 .biggerContent {
   border-radius: 0.25rem;
 
-  padding-left: 0.125rem;
-  padding-right: 0.125rem;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
 
   padding-top: 0.375rem;
   padding-bottom: 0.375rem;
+  /* font-weight: 600; */
 }
 
 .tag {
-  font-size: 0.75rem;
   line-height: 1;
+  font-weight: 600;
+
+  font-size: 0.75rem;
   border-radius: 0.25rem;
 
   padding-left: 0.125rem;
   padding-right: 0.125rem;
 
-  font-weight: 600;
   margin-left: 0.25rem;
 }
 
@@ -35,7 +40,7 @@ https://tailwindcss.com/docs/text-color
 100 800 
 */
 .contentRed {
-  background-color: rgba(254, 226, 226, 1);
+  background-color: rgba(254, 202, 202, 1);
   color: rgba(153, 27, 27, 1);
 }
 
@@ -43,6 +48,27 @@ https://tailwindcss.com/docs/text-color
 .tagRed {
   background-color: rgba(239, 68, 68, 1);
   color: rgba(254, 226, 226, 1);
+}
+
+/* .contentRed {
+  background-color: rgba(239, 68, 68, 1);
+  color: white;
+}
+
+.tagRed {
+  background-color: white;
+  color: black;
+} */
+
+.contentOrange {
+  background-color: rgba(255, 237, 213, 1);
+  color: rgba(154, 52, 18, 1);
+}
+
+/* 500 100 */
+.tagOrange {
+  background-color: rgba(249, 115, 22, 1);
+  color: rgba(255, 237, 213, 1);
 }
 
 .contentPink {
