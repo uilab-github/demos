@@ -50,7 +50,8 @@ const WordTagSentence = ({ sentence, offensive, target }: TWordTagSentence) => {
     taggedParts.push({
       tag: 'offensive',
       startIndex: offensive.startIndex,
-      endIndex: offensive.endIndex,
+      // This +1 exist because of the dataset limitation
+      endIndex: offensive.endIndex + 1,
     });
   }
   if (target) {
