@@ -177,25 +177,6 @@ const cardData: CardContent[] = [
       />
     ),
   },
-  // {
-  //   front: (
-  //     <CardFrontFormatter
-  //       title="[100분토론] 젠더갈등, 대책은 무엇인가? | 정준희 | 신지예 | 이준석"
-  //       comment="대한민국 여자들 죄다 군대 보내버려 잡소리할거면"
-  //     />
-  //   ),
-  //   back: (
-  //     <CardBackFormatter
-  //       offensiveSpan={focusOn(
-  //         '대한민국 여자들 죄다 군대 보내버려 잡소리할거면',
-  //         0,
-  //         26
-  //       )}
-  //       target="group"
-  //       targetGroup="집단-성 정체성-여성"
-  //     />
-  //   ),
-  // },
 ];
 
 const CardView = () => (

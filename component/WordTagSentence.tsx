@@ -83,7 +83,11 @@ const WordTagSentence = ({ sentence, offensive, target }: TWordTagSentence) => {
       const { startIndex, endIndex, tag } = taggedPart;
       output.push(sentence.slice(currIndex, startIndex));
       output.push(
-        <WordTagType content={sentence.slice(startIndex, endIndex)} tag={tag} />
+        <WordTagType
+          key={startIndex}
+          content={sentence.slice(startIndex, endIndex)}
+          tag={tag}
+        />
       );
       currIndex = endIndex;
     }
