@@ -19,6 +19,11 @@
   border-radius: 7px;
   overflow-y: scroll;
   min-height: 200;
+  line-height: 1.6;
+  vertical-align: middle;
+  color: #000000;
+  font-size: 16px;
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
 }
 
 .buttons {
@@ -60,5 +65,18 @@
 }
 
 .outputContent {
-  padding: 10px 0px;
+  padding: 10px 10px;
+  line-height: 1.5;
+  border: solid 1px rgba(118, 118, 118, 0.3);
+  border-radius: 7px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.red {
+  color: rgb(242, 43, 43);
+}
+
+.green {
+  color: rgb(10, 143, 107);
 }

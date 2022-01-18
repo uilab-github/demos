@@ -1,110 +1,54 @@
+.wrapper {
+}
+
+.smallWrapper {
+  display: inline-block;
+}
+
 .content {
-  line-height: 2;
+  text-align: center;
+  line-height: 30px;
 
-  border-radius: 0.25rem;
-
-  padding-left: 0.125rem;
-  padding-right: 0.125rem;
-
-  padding-top: 0.125rem;
-  padding-bottom: 0.125rem;
+  border-bottom: 2px solid;
+  padding-bottom: 0px;
 }
 
 .biggerContent {
-  border-radius: 0.25rem;
+  line-height: 30px;
 
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
-
-  padding-top: 0.375rem;
-  padding-bottom: 0.375rem;
+  border-bottom: 2px solid;
+  padding-bottom: 4px;
 }
 
 .tag {
-  line-height: 1;
   font-weight: 600;
 
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   border-radius: 0.25rem;
 
   padding-left: 0.125rem;
   padding-right: 0.125rem;
+  padding-top: 0.06125rem;
+  padding-bottom: 0.06125rem;
 
   margin-left: 0.25rem;
+  margin-right: 0.25rem;
 }
 
-/* 
-https://tailwindcss.com/docs/text-color
-100 800 
-*/
 .contentRed {
-  background-color: rgba(254, 202, 202, 1);
-  color: rgba(153, 27, 27, 1);
+  border-color: rgb(234, 21, 55);
 }
 
-/* 500 100 */
 .tagRed {
-  background-color: rgba(239, 68, 68, 1);
-  color: rgba(254, 226, 226, 1);
-}
-
-/* .contentRed {
-  background-color: rgba(239, 68, 68, 1);
+  background-color: rgb(234, 21, 55);
   color: white;
 }
 
-.tagRed {
-  background-color: white;
-  color: black;
-} */
-
-.contentOrange {
-  background-color: rgba(255, 237, 213, 1);
-  color: rgba(154, 52, 18, 1);
+.contentYellow {
+  border-color: rgb(255, 182, 26);
 }
 
-/* 500 100 */
-.tagOrange {
-  background-color: rgba(249, 115, 22, 1);
-  color: rgba(255, 237, 213, 1);
-}
-
-.contentPink {
-  background-color: rgba(252, 231, 243, 1);
-  color: rgba(157, 23, 77, 1);
-}
-
-.tagPink {
-  background-color: rgba(236, 72, 153, 1);
-  color: rgba(252, 231, 243, 1);
-}
-
-.contentFuchsia {
-  background-color: rgba(250, 232, 255, 1);
-  color: rgba(134, 25, 143, 1);
-}
-
-.tagFuchsia {
-  background-color: rgba(217, 70, 239, 1);
-  color: rgba(250, 232, 255, 1);
-}
-
-.contentCyan {
-  background-color: rgba(207, 250, 254, 1);
-  color: rgba(21, 94, 117, 1);
-}
-
-.tagCyan {
-  background-color: rgba(6, 182, 212, 1);
-  color: rgba(207, 250, 254, 1);
-}
-
-.contentEmerald {
-  background-color: rgba(209, 250, 229, 1);
-  color: rgba(6, 95, 70, 1);
-}
-
-.tagEmerald {
-  background-color: rgba(16, 195, 129, 1);
-  color: rgba(209, 250, 229, 1);
+.tagYellow {
+  background-color: rgb(255, 182, 26);
+  color: white;
 }

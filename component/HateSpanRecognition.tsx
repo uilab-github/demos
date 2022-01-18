@@ -24,7 +24,7 @@ const HateSpanRecognition = () => {
 
   useEffect(() => {
     textareaRef.current.style.height = '0px';
-    const scrollHeight = (textareaRef.current.scrollHeight as number) * 1.05;
+    const scrollHeight = (textareaRef.current.scrollHeight as number) * 1.06;
     textareaRef.current.style.height = scrollHeight + 'px';
   }, [input]);
 
@@ -84,10 +84,20 @@ const HateSpanRecognition = () => {
         <div className={classes.output}>
           <div className={classes.outputTitle}> {`Analysis Result`}</div>
           <div className={classes.outputContent}>
-            <div className={classes.offensiveness}>
+            {/* <div className={classes.offensiveness}>
               {`Offensiveness: `}
               {outputDetail.offensiveness ? `True` : `False`}
-            </div>
+            </div> */}
+
+            {/* {outputDetail.offensiveness ? (
+              <div className={`${classes.offensiveness} ${classes.red}`}>
+                The sentence is offensive
+              </div>
+            ) : (
+              <div className={`${classes.offensiveness} ${classes.green}`}>
+                The sentence is not offensive
+              </div>
+            )} */}
             <div className={classes.outputMain}>{output}</div>
           </div>
         </div>

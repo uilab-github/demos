@@ -26,15 +26,15 @@
 }
 
 .card .red {
-  color: rgba(242, 43, 43);
+  color: rgb(242, 43, 43);
 }
 
 .card .blue {
-  color: rgba(35, 93, 255);
+  color: rgb(35, 93, 255);
 }
 
 .card .green {
-  color: rgba(10, 143, 107);
+  color: rgb(10, 143, 107);
 }
 
 .card .bold {

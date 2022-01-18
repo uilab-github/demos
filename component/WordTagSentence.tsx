@@ -1,10 +1,4 @@
-import {
-  WordTagRed,
-  WordTagOrange,
-  WordTagCyan,
-  WordTagPink,
-  WordTagFuchsia,
-} from 'component/WordTag';
+import { WordTagRed, WordTagYellow } from 'component/WordTag';
 
 export type Tposition = {
   startIndex: number;
@@ -32,9 +26,9 @@ const WordTagType = ({ content, tag, isBigger }: TWordTagType) => {
     case 'offensive':
       return <WordTagRed content={content} tag={tag} isBigger={isBigger} />;
     case 'target':
-      return <WordTagPink content={content} tag={tag} isBigger={isBigger} />;
+      return <WordTagYellow content={content} tag={tag} isBigger={isBigger} />;
     default:
-      return <WordTagFuchsia content={content} tag={tag} isBigger={isBigger} />;
+      return <WordTagRed content={content} tag={tag} isBigger={isBigger} />;
   }
 };
 
