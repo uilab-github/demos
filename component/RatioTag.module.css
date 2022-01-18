@@ -1,5 +1,6 @@
 .radioTagsWrapper {
   display: flex;
+  flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
   color: rgb(71, 81, 92);
@@ -12,4 +13,12 @@
 
 .span {
   font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.optionList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
 }

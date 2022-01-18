@@ -7,6 +7,7 @@ type TRadioOption = {
   banList?: string[];
   value: string;
   description: string;
+  newLine?: boolean;
   onChange: React.ChangeEventHandler<HTMLInputElement>;
 };
 
@@ -15,6 +16,7 @@ const RadioOption = ({
   banList,
   value,
   description,
+  newLine,
   onChange,
 }: TRadioOption) => {
   const attrRadioOptionElem = (option: string) => {
@@ -38,7 +40,13 @@ const RadioOption = ({
   return (
     <div className={classes.radioTagsWrapper}>
       <span className={classes.span}>{description}: </span>
-      {optionList.map((oneData) => attrRadioOptionElem(oneData))}
+      {newLine ? (
+        <div className={classes.optionList}>
+          {optionList.map((oneData) => attrRadioOptionElem(oneData))}
+        </div>
+      ) : (
+        <>{optionList.map((oneData) => attrRadioOptionElem(oneData))}</>
+      )}
     </div>
   );
 };

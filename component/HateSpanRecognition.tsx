@@ -74,6 +74,7 @@ const HateSpanRecognition = () => {
           banList={banModeList}
           value={formMode}
           description={'Mode'}
+          newLine={true}
           onChange={(e) => setFormMode(e.target.value)}
         />
       </div>
