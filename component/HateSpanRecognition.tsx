@@ -26,7 +26,6 @@ const HateSpanRecognition = () => {
     textareaRef.current.style.height = '0px';
     const scrollHeight = (textareaRef.current.scrollHeight as number) * 1.05;
     textareaRef.current.style.height = scrollHeight + 'px';
-    console.log(scrollHeight);
   }, [input]);
 
   const getOutput = () => {

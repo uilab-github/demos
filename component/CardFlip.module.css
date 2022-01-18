@@ -29,3 +29,9 @@
   flex-direction: column;
   justify-content: center;
 }
+
+@media only screen and (max-width: 30rem) {
+  .cardBack {
+    height: 211px;
+  }
+}
