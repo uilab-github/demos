@@ -8,7 +8,7 @@ import {
   Tooltip,
 } from 'chart.js';
 import { DataFormat } from 'data/paperDataLoader';
-import RadioOption from './ChartAttributeRadioTag';
+import RadioTag from '../RadioTag';
 import StackedBar from './StackedBarChart';
 
 ChartJS.register(BarElement, LinearScale, CategoryScale, Title, Tooltip);
@@ -55,13 +55,13 @@ const StackedBarCompareView = ({
     <>
       {attribute && (
         <>
-          <RadioOption
+          <RadioTag
             optionList={attributes}
             value={attribute}
             description={'Attributes'}
             onChange={(e) => setAttribute(e.target.value)}
           />
-          <RadioOption
+          <RadioTag
             optionList={modes}
             value={isCompareMode ? modes[1] : modes[0]}
             description={'View'}

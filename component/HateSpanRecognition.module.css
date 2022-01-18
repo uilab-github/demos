@@ -1,0 +1,64 @@
+.radioTag {
+}
+
+.inputTitle {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-size: 17px;
+}
+
+.textarea {
+  width: 100%;
+  font-size: 15px;
+  padding: 10px 10px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  resize: none;
+  min-height: fit-content;
+  background-color: white;
+  border-radius: 7px;
+  overflow-y: scroll;
+  min-height: 200;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  column-gap: 10px;
+  margin-top: 10px;
+}
+
+.buttons input[type='button'] {
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  border: solid;
+  border-radius: 7px;
+  border-width: 1px;
+  background-color: #0288d1;
+  border-color: #0288d1;
+  color: white;
+}
+
+.buttons input[type='button']:hover {
+  background-color: #017abc;
+  border-color: #017abc;
+  cursor: pointer;
+}
+
+.output {
+  margin-top: 10px;
+  padding: 10px 0px;
+
+  border-radius: 7px;
+  border-width: 1px;
+  border-color: #0288d1;
+}
+
+.outputTitle {
+  font-size: 17px;
+}
+
+.outputContent {
+  padding: 10px 0px;
+}

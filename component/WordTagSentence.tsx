@@ -6,7 +6,7 @@ import {
   WordTagFuchsia,
 } from 'component/WordTag';
 
-type Tposition = {
+export type Tposition = {
   startIndex: number;
   endIndex: number;
 };
@@ -39,12 +39,6 @@ const WordTagType = ({ content, tag, isBigger }: TWordTagType) => {
 };
 
 const WordTagSentence = ({ sentence, offensive, target }: TWordTagSentence) => {
-  const isOverlap =
-    offensive &&
-    target &&
-    offensive.startIndex <= target.startIndex &&
-    target.endIndex <= offensive.endIndex;
-
   const taggedParts: TTaggedPartElement[] = [];
   if (offensive) {
     taggedParts.push({
@@ -58,20 +52,25 @@ const WordTagSentence = ({ sentence, offensive, target }: TWordTagSentence) => {
     taggedParts.push({
       tag: 'target',
       startIndex: target.startIndex,
-      endIndex: target.endIndex,
+      // This +1 exist because of the dataset limitation
+      endIndex: target.endIndex, //+ 1,
     });
   }
   taggedParts.sort((a, b) => {
-    const [aStart, aEnd] = [a.startIndex, a.endIndex];
-    const [bStart, bEnd] = [b.startIndex, b.endIndex];
-    if (aStart < bStart || (aStart === bStart && aEnd < bEnd)) {
+    if (a.endIndex < b.endIndex) {
       return -1;
     }
-    if (aStart === bStart && aEnd === bEnd) {
+    if (a.endIndex === b.endIndex) {
       return 0;
     }
     return 1;
   });
+
+  const isOverlap =
+    offensive &&
+    target &&
+    taggedParts[1].startIndex <= taggedParts[0].startIndex &&
+    taggedParts[0].endIndex <= taggedParts[1].endIndex;
 
   const wordTagNonOverlap = (
     sentence: string,
@@ -112,7 +111,6 @@ const WordTagSentence = ({ sentence, offensive, target }: TWordTagSentence) => {
       taggedParts[1].endIndex,
       taggedParts[1].tag,
     ];
-
     const innerTagged = (
       <WordTagType
         content={sentence.slice(innerStartIndex, innerEndIndex)}

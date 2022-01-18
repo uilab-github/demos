@@ -5,7 +5,7 @@ import { NationDistribution, getNationFromISOA3 } from 'component/nationUtil';
 import { languageAbbrToFull, languageFullToAbbr } from '../languageUtil';
 
 import { BEFORE_DATA, AFTER_DATA, DataFormat } from 'data/paperDataLoader';
-import RadioOption from 'component/chart/ChartAttributeRadioTag';
+import RadioTag from 'component/RadioTag';
 
 const getColorPoint = (nationDistribution: NationDistribution) => {
   return (geo) => {
@@ -30,13 +30,13 @@ const MapView = () => {
 
   return (
     <div>
-      <RadioOption
+      <RadioTag
         optionList={attributes}
         value={attribute}
         description={'Attributes'}
         onChange={(e) => setAttribute(e.target.value)}
       />
-      <RadioOption
+      <RadioTag
         optionList={languages.map((abbr) => languageAbbrToFull(abbr))}
         value={languageAbbrToFull(language)}
         description={'Language'}

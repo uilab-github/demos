@@ -8,7 +8,7 @@ import {
   Tooltip,
 } from 'chart.js';
 import { DataFormat } from 'data/paperDataLoader';
-import RadioOption from './ChartAttributeRadioTag';
+import RadioTag from '../RadioTag';
 import StackedBar from './StackedBarChart';
 
 ChartJS.register(BarElement, LinearScale, CategoryScale, Title, Tooltip);
@@ -26,7 +26,7 @@ const StackedBarView = ({ data }: TStackedBarViewProps) => {
     <>
       {attribute && (
         <>
-          <RadioOption
+          <RadioTag
             optionList={attributes}
             value={attribute}
             description={'Attributes'}
