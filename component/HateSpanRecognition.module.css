@@ -1,6 +1,3 @@
-.radioTag {
-}
-
 .inputTitle {
   margin-top: 15px;
   margin-bottom: 5px;
@@ -32,6 +29,26 @@
   width: 100%;
   column-gap: 10px;
   margin-top: 10px;
+}
+
+.LoaderWrapper {
+  display: flex;
+  width: 138.69px;
+  align-items: center;
+  justify-content: center;
+  column-gap: 5px;
+  margin-bottom: 10px;
+  border: solid;
+  border-radius: 7px;
+  border-width: 1px;
+  background-color: #0289d1;
+  border-color: #0288d1;
+  cursor: not-allowed;
+}
+
+.LoaderWrapper span {
+  color: white;
+  font-size: 13.3333px;
 }
 
 .buttons input[type='button'] {

@@ -8,18 +8,20 @@ import {
   getCommentDetail,
   hateSpanDetailFormat,
 } from 'data/hateSpanLoader';
+import { ClipLoader } from 'react-spinners';
 
 import WordTagSentence, { Tposition } from './WordTagSentence';
 
 const HateSpanRecognition = () => {
   const textareaRef = useRef(null);
 
-  const modeList = ['Generate Random Data', 'Custom Input'];
-  const banModeList = ['Custom Input'];
+  const modeList = ['Data in dataset', 'Custom Input (on developing)'];
+  const banModeList = [modeList[1]];
   const [formMode, setFormMode] = useState<string>(modeList[0]);
   const [input, setInput] = useState<string>(sampleComments[0]);
   const [output, setOutput] = useState<React.ReactChild>();
   const [outputDetail, setOutputDetail] = useState<hateSpanDetailFormat>();
+  const [isLoading, setIsloading] = useState<boolean>(false);
 
   useEffect(() => {
     textareaRef.current.style.height = '0px';
@@ -27,7 +29,16 @@ const HateSpanRecognition = () => {
     textareaRef.current.style.height = scrollHeight + 'px';
   }, [input]);
 
+  useEffect(() => {
+    if (isLoading && formMode === modeList[0]) {
+      setTimeout(() => {
+        setIsloading(false);
+      }, 2000);
+    }
+  }, [isLoading]);
+
   const getOutput = () => {
+    setIsloading(true);
     const detailInfo = getCommentDetail(input);
     setOutputDetail(detailInfo);
     const offensive: Tposition = {
@@ -46,6 +57,7 @@ const HateSpanRecognition = () => {
   };
 
   const changeData = () => {
+    setIsloading(false);
     setOutput(undefined);
     var newComment = getRandomComment();
     while (newComment === input) {
@@ -77,9 +89,20 @@ const HateSpanRecognition = () => {
       </div>
       <div className={classes.buttons}>
         <input type="button" value={'Change Data'} onClick={changeData} />
-        <input type="button" value={'Extract Hate-span'} onClick={getOutput} />
+        {isLoading ? (
+          <div className={classes.LoaderWrapper}>
+            <ClipLoader size={15} color={'#ffffff'} />
+            <span>Loading</span>
+          </div>
+        ) : (
+          <input
+            type="button"
+            value={'Extract Hate-span'}
+            onClick={getOutput}
+          />
+        )}
       </div>
-      {output && (
+      {output && !isLoading && (
         <div className={classes.output}>
           <div className={classes.outputTitle}> {`Analysis Result`}</div>
           <div className={classes.outputContent}>
