@@ -6,7 +6,6 @@ import {
   sampleComments,
   getRandomComment,
   getCommentDetail,
-  getComment,
   hateSpanDetailFormat,
 } from 'data/hateSpanLoader';
 

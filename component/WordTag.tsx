@@ -26,12 +26,12 @@ const WordTag = ({
           <span className={`${classes.tag} ${tagColorClass}`}>{tag}</span>
         </>
       ) : (
-        <span className={classes.smallWrapper}>
+        <>
           <span className={`${classes.content} ${contentColorClass}`}>
             {content}
           </span>
           <span className={`${classes.tag} ${tagColorClass}`}>{tag}</span>
-        </span>
+        </>
       )}
     </span>
   );
@@ -48,13 +48,15 @@ export const WordTagRed = ({ content, tag, isBigger }: TWordTag) => (
 );
 
 export const WordTagYellow = ({ content, tag, isBigger }: TWordTag) => (
-  <WordTag
-    content={content}
-    tag={tag}
-    contentColorClass={classes.contentYellow}
-    tagColorClass={classes.tagYellow}
-    isBigger={isBigger}
-  />
+  <span className={classes.inlineBlock}>
+    <WordTag
+      content={content}
+      tag={tag}
+      contentColorClass={classes.contentYellow}
+      tagColorClass={classes.tagYellow}
+      isBigger={isBigger}
+    />
+  </span>
 );
 
 export default WordTagRed;

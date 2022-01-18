@@ -17,7 +17,7 @@
   min-height: fit-content;
   background-color: white;
   border-radius: 7px;
-  overflow-y: scroll;
+  overflow-y: auto;
   min-height: 200;
   line-height: 1.6;
   vertical-align: middle;
