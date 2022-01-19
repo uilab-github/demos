@@ -3,12 +3,12 @@ import TopNavElement from './TopNavElement';
 import GithubIcon from 'public/github.svg';
 import PaperIcon from 'public/paper.svg';
 
-type TTopNavBar = {
+type TTopNavBarDemo = {
   paperUrl?: string;
   githubUrl?: string;
 };
 
-const TopNavBar = ({ paperUrl, githubUrl }: TTopNavBar) => {
+const TopNavBarForDemo = ({ paperUrl, githubUrl }: TTopNavBarDemo) => {
   return (
     <header className={classes.header}>
       <div className={classes.padding}>
@@ -42,4 +42,4 @@ const TopNavBar = ({ paperUrl, githubUrl }: TTopNavBar) => {
   );
 };
 
-export default TopNavBar;
+export default TopNavBarForDemo;

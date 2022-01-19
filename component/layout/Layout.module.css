@@ -5,17 +5,31 @@
   /* min-height: 120vh; */
 }
 
-.main {
+.main,
+.mainLarge {
   display: flex;
   justify-content: center;
   flex: 1;
   width: 100%;
+}
+
+.main {
   padding: 16px 36px;
+}
+
+.mainLarge {
+  padding: 96px 36px;
 }
 
 @media (min-width: 900px) {
   .main {
     width: 900px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .mainLarge {
+    width: 1200px;
   }
 }
 

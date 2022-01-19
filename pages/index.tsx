@@ -1,10 +1,11 @@
-import Layout from 'component/layout/Layout';
+import { DemoListLayout } from 'component/layout/Layout';
+import DemoCardListView from 'component/DemoCardListView';
 
 const HomePage = () => {
   return (
-    <Layout title={'U&I Lab Demo'}>
-      <div>Hello World!</div>
-    </Layout>
+    <DemoListLayout title={'Demos - U&I Lab '}>
+      <DemoCardListView />
+    </DemoListLayout>
   );
 };
 

@@ -1,0 +1,30 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 45px;
+  font-weight: 700;
+  color: #265ed4;
+  padding-bottom: 60px;
+}
+
+/* .list {
+  padding-bottom: 100px;
+} */
+
+.listElem {
+  padding: 36px 0px;
+
+  border-bottom: 1px;
+  border-bottom-style: solid;
+
+  border-color: rgb(213, 218, 227);
+}
+
+.listElem:first-child {
+  border-top: 1px;
+  border-top-style: solid;
+  border-color: rgb(213, 218, 227);
+}

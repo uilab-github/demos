@@ -19,4 +19,15 @@ const Layout = ({ title, children, TopNavBar }: TLayout) => {
   );
 };
 
+export const DemoListLayout = ({ title, children, TopNavBar }: TLayout) => {
+  return (
+    <div className={classes.layout}>
+      <CustomHead title={title} />
+      {TopNavBar && <TopNavBar />}
+      <main className={classes.mainLarge}>{children}</main>
+      <Footer />
+    </div>
+  );
+};
+
 export default Layout;
