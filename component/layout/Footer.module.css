@@ -18,6 +18,15 @@
   padding: 0px 30px;
 }
 
+.footerInlinerLonger {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 30px;
+}
+
 .editLink:hover {
   text-decoration: underline;
 }
@@ -25,6 +34,11 @@
 @media only screen and (min-width: 900px) {
   .footerInliner {
     width: 900px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .footerInlinerLonger {
+    width: 1200px;
   }
 }
 
@@ -48,6 +62,16 @@
     align-items: center;
     padding: 0px 20px;
   }
+
+  .footerInlinerLonger {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 20px;
+  }
+
   .footerContent {
     display: flex;
     flex-direction: column;

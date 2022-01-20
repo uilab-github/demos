@@ -10,9 +10,10 @@
   padding-bottom: 60px;
 }
 
-/* .list {
-  padding-bottom: 100px;
-} */
+.demoCounter {
+  color: rgb(71, 81, 92);
+  padding-bottom: 12px;
+}
 
 .listElem {
   padding: 36px 0px;

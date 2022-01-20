@@ -8,7 +8,7 @@ const TopNavElement = ({
 }: {
   name: string;
   link: string;
-  children: ReactNode;
+  children?: ReactNode;
 }) => {
   return (
     <li>

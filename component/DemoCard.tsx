@@ -13,7 +13,6 @@ const DemoCard = ({
   summaryShort,
   summaryLong,
 }: SummaryData) => {
-  console.log(summaryImgPath);
   return summaryTitle ? (
     <div className={classes.cardRoot}>
       <div className={classes.imageWrapper}>

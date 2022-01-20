@@ -1,5 +1,5 @@
 import CustomHead from './CustomHead';
-import Footer from './Footer';
+import { FooterMain, FooterDemo } from './Footer';
 import classes from './Layout.module.css';
 
 type TLayout = {
@@ -14,7 +14,7 @@ export const LayoutDemo = ({ title, children, TopNavBar }: TLayout) => {
       <CustomHead title={title} />
       {TopNavBar && <TopNavBar />}
       <main className={classes.main}>{children}</main>
-      <Footer />
+      <FooterDemo />
     </div>
   );
 };
@@ -25,7 +25,7 @@ export const LayoutMain = ({ title, children, TopNavBar }: TLayout) => {
       <CustomHead title={title} />
       {TopNavBar && <TopNavBar />}
       <main className={classes.mainLarge}>{children}</main>
-      <Footer />
+      <FooterMain />
     </div>
   );
 };
