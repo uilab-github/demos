@@ -79,3 +79,33 @@
   margin-left: 2rem;
   color: rgb(71, 81, 92);
 }
+
+@media only screen and (max-width: 30rem) {
+  .content ul {
+    display: none;
+  }
+  .paddingText {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 4px 20px;
+  }
+  .content {
+    display: flex;
+    flex: 2;
+    width: 100%;
+    padding: 10px 20px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logoText {
+    display: block;
+    padding: 0 0rem;
+    font-size: 1.25rem;
+    line-height: 1.25;
+    color: rgb(71, 81, 92);
+  }
+}
