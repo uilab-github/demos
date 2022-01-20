@@ -10,22 +10,30 @@ type TLayout = {
 
 export const LayoutDemo = ({ title, children, TopNavBar }: TLayout) => {
   return (
-    <div className={classes.layout}>
+    <>
       <CustomHead title={title} />
-      {TopNavBar && <TopNavBar />}
-      <main className={classes.main}>{children}</main>
-      <FooterDemo />
-    </div>
+      <div className={classes.body}>
+        {TopNavBar && <TopNavBar />}
+        <main className={classes.main}>{children}</main>
+      </div>
+      <div className={classes.footer}>
+        <FooterDemo />
+      </div>
+    </>
   );
 };
 
 export const LayoutMain = ({ title, children, TopNavBar }: TLayout) => {
   return (
-    <div className={classes.layout}>
+    <>
       <CustomHead title={title} />
-      {TopNavBar && <TopNavBar />}
-      <main className={classes.mainLarge}>{children}</main>
-      <FooterMain />
-    </div>
+      <div className={classes.body}>
+        {TopNavBar && <TopNavBar />}
+        <main className={classes.mainLarge}>{children}</main>
+      </div>
+      <div className={classes.footer}>
+        <FooterMain />
+      </div>
+    </>
   );
 };

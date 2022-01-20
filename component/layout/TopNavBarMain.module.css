@@ -59,6 +59,10 @@
   color: rgb(71, 81, 92);
 }
 
+.dropDown {
+  display: none;
+}
+
 @media (min-width: 1200px) {
   .content,
   .paddingText {
@@ -107,5 +111,12 @@
     font-size: 1.25rem;
     line-height: 1.25;
     color: rgb(71, 81, 92);
+  }
+  .dropDown {
+    display: flex;
+  }
+
+  .dropDown ul {
+    display: flex;
   }
 }
