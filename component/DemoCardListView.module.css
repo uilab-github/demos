@@ -29,3 +29,9 @@
   border-top-style: solid;
   border-color: rgb(213, 218, 227);
 }
+
+@media only screen and (max-width: 30rem) {
+  .listElem {
+    padding: 18px 0px;
+  }
+}
