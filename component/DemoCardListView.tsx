@@ -5,7 +5,7 @@ import classes from './DemoCardListView.module.css';
 const DemoCardListView = () => {
   return (
     <div className={classes.wrapper}>
-      <div className={classes.title}>Uilab Demos</div>
+      <div className={classes.title}>TEXT</div>
       <div className={classes.list}>
         {Object.values(pageMap).map(
           ({

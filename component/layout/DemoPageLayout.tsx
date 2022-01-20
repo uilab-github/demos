@@ -1,4 +1,4 @@
-import Layout from './Layout';
+import { LayoutDemo } from './Layout';
 import pageMap from 'data/pageMap';
 import MdxWrapper from 'component/MdxWrapper';
 import TopNavBarForDemo from './TopNavBar';
@@ -11,9 +11,9 @@ const DemoPageLayout = (url: string) => {
   );
 
   return (
-    <Layout title={title} TopNavBar={TopNavBar}>
+    <LayoutDemo title={title} TopNavBar={TopNavBar}>
       <MdxWrapper MdxContent={mdxContent}></MdxWrapper>
-    </Layout>
+    </LayoutDemo>
   );
 };
 

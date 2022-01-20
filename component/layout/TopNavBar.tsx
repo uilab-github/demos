@@ -18,8 +18,7 @@ const TopNavBarForDemo = ({ paperUrl, githubUrl }: TTopNavBarDemo) => {
         </div>
       </div>
       <div className={classes.content}>
-        <a href="https://uilab.kr/" className={classes.logo}>
-          <div className={classes.logoImage}></div>
+        <a href="https://uilab.kr/">
           <div className={classes.logoText}>
             USERS {'&'} <br />
             INFORMATION

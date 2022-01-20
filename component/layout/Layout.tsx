@@ -8,7 +8,7 @@ type TLayout = {
   TopNavBar?: () => JSX.Element;
 };
 
-const Layout = ({ title, children, TopNavBar }: TLayout) => {
+export const LayoutDemo = ({ title, children, TopNavBar }: TLayout) => {
   return (
     <div className={classes.layout}>
       <CustomHead title={title} />
@@ -19,7 +19,7 @@ const Layout = ({ title, children, TopNavBar }: TLayout) => {
   );
 };
 
-export const DemoListLayout = ({ title, children, TopNavBar }: TLayout) => {
+export const LayoutMain = ({ title, children, TopNavBar }: TLayout) => {
   return (
     <div className={classes.layout}>
       <CustomHead title={title} />
@@ -29,5 +29,3 @@ export const DemoListLayout = ({ title, children, TopNavBar }: TLayout) => {
     </div>
   );
 };
-
-export default Layout;
