@@ -28,23 +28,24 @@ const pageUrlToPage: PageMap = {
     githubUrl: 'https://github.com/jaimeenahn',
     paperUrl: 'https://arxiv.org/abs/2109.05704',
     pageUrl: '/demo/Mitigating-Language-Dependent-Ethnic-Bias-in-BERT',
-    summaryImgPath: '/summary/test.png',
+    summaryImgPath: '/summary/Mitigating.png',
     summaryTitle: 'Mitigating Language Dependent Ethnic Bias in BERT',
-    summaryShort: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
-    summaryLong: `do eiusmod tempXor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat`,
+    summaryShort: `Mitigating ethnic bias by using a multilingual model,
+       and using contextual word alignment of two monolingual models`,
+    summaryLong: `We study ethnic bias and how it varies across languages 
+    by analyzing and mitigating ethnic bias in monolingual BERT for English, German, Spanish, Korean, Turkish, and Chinese. 
+    We compare our proposed methods with monolingual BERT and show that these methods effectively alleviate the ethnic bias.`,
   },
   'Korean-Hate-Speech-Dataset': {
     title: 'U&I Lab Demo',
     mdxContent: KoreanHateSpeechDatasetDemo,
     pageUrl: '/demo/Korean-Hate-Speech-Dataset',
-    summaryImgPath: '/summary/test.png',
+    summaryImgPath: '/summary/Hatespan.png',
     summaryTitle: 'Korean Hate Speech Dataset',
-    summaryShort: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
-    summaryLong: `do eiusmod tempXor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat`,
+    summaryShort: `A dataset that classify not only offensiveness of a sentence but also hate span`,
+    summaryLong: `This dataset labels the aggression and hate targets of Korean news comments. 
+    This dataset discriminates offensive and not offensive for each comment as binary.
+    Also, it finds hate span, the basis of classification, and classifies it into target-term, predicate-term, and no-span hate speech.`,
   },
 };
 

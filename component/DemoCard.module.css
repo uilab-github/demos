@@ -30,7 +30,13 @@
 }
 
 .content strong {
+  margin-top: 2px;
   font-size: 16px;
+  color: #47515c;
+}
+
+.content p {
+  margin-top: 12px;
 }
 
 .link {

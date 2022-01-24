@@ -1,4 +1,5 @@
 import { WordTagRed, WordTagYellow } from 'component/WordTag';
+import classes from './WordTagSentence.module.css';
 
 export type Tposition = {
   startIndex: number;
@@ -87,7 +88,7 @@ const WordTagSentence = ({ sentence, offensive, target }: TWordTagSentence) => {
     if (currIndex !== sentence.length) {
       output.push(sentence.slice(currIndex));
     }
-    return <span>{output}</span>;
+    return <span className={classes.output}>{output}</span>;
   };
 
   const wordTagOverlap = (
@@ -126,7 +127,7 @@ const WordTagSentence = ({ sentence, offensive, target }: TWordTagSentence) => {
       />
     );
     return (
-      <span>
+      <span className={classes.output}>
         {sentence.slice(0, outerStartIndex)}
         {outerTagged}
         {sentence.slice(outerEndIndex)}

@@ -22,6 +22,7 @@ const DemoCard = ({
           alt={`${summaryTitle}` + 'Image'}
           width={400}
           height={218}
+          quality={100}
         />
       </div>
       <div className={classes.content}>

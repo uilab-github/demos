@@ -107,11 +107,6 @@ const HateSpanRecognition = () => {
         <div className={classes.output}>
           <div className={classes.outputTitle}> {`Analysis Result`}</div>
           <div className={classes.outputContent}>
-            {/* <div className={classes.offensiveness}>
-              {`Offensiveness: `}
-              {outputDetail.offensiveness ? `True` : `False`}
-            </div> */}
-
             {/* {outputDetail.offensiveness ? (
               <div className={`${classes.offensiveness} ${classes.red}`}>
                 The sentence is offensive
