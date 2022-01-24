@@ -18,7 +18,7 @@ type MapWithTooltipProps = {
 const TooltipWrapper = styled.div`
   background-color: #222426;
   opacity: 0.9;
-  padding: 8px 18px 8px 18px;
+  padding: 6px 12px 6px 12px;
   color: #ffffff;
   text-align: center;
   border-radius: 4px;

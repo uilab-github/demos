@@ -19,6 +19,7 @@ a {
 
 * {
   box-sizing: border-box;
+  outline: none;
 }
 
 input[type='radio'] {

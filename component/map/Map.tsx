@@ -3,6 +3,7 @@ import {
   ComposableMap,
   Geographies,
   Geography,
+  Graticule,
   ZoomableGroup,
 } from 'react-simple-maps';
 import geography from '../../data/geography.json';
@@ -55,6 +56,7 @@ const Map_ = ({ getColorPoint, setContent, distributions }: MapChartProps) => (
           [800, 475],
         ]}
       >
+        <Graticule stroke="#F0F3FA" strokeWidth={1.0} />
         <Geographies geography={geography}>
           {({ geographies }) =>
             geographies.map((geo) => {
@@ -79,6 +81,7 @@ const Map_ = ({ getColorPoint, setContent, distributions }: MapChartProps) => (
                   }}
                   onMouseLeave={(e) => {
                     setContent(undefined);
+                    e.stopPropagation();
                   }}
                   style={{
                     default: {
