@@ -113,7 +113,7 @@
     color: rgb(71, 81, 92);
   }
   .dropDown {
-    display: flex;
+    display: none;
   }
 
   .dropDown ul {
