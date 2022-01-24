@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './RatioTag.module.css';
+import classes from './RadioTag.module.css';
 import { v4 as uuidv4 } from 'uuid';
 
 type TRadioOption = {
