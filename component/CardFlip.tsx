@@ -9,6 +9,7 @@ type TCardFilp = {
 
 const CardFlip = ({ Front, Back }: TCardFilp) => {
   const [isFlipped, setIsFlipped] = useState(false);
+  const [isFocusMobile, setIsFocusForMobile] = useState(false);
 
   const cardFront = (children: ReactNode) => {
     return <div className={classes.cardFront}>{children}</div>;
@@ -22,10 +23,17 @@ const CardFlip = ({ Front, Back }: TCardFilp) => {
     <div
       className={classes.card}
       onMouseEnter={() => {
-        setIsFlipped(true);
+        console.log('on mouse Enter');
+        setIsFlipped((status) => (isFocusMobile ? status : true));
       }}
       onMouseLeave={() => {
-        setIsFlipped(false);
+        console.log('on mouse Leave');
+        setIsFlipped((status) => (isFocusMobile ? status : false));
+      }}
+      onTouchStart={() => {
+        console.log('on touch start');
+        setIsFocusForMobile(true);
+        setIsFlipped((status) => !status);
       }}
     >
       <ReactCardFlip
