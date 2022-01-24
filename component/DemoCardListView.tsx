@@ -20,17 +20,15 @@ const DemoCardListView = () => {
             summaryLong,
           }) => {
             return (
-              <>
-                <div key={summaryTitle} className={classes.listElem}>
-                  <DemoCard
-                    pageUrl={pageUrl}
-                    summaryImgPath={summaryImgPath}
-                    summaryTitle={summaryTitle}
-                    summaryShort={summaryShort}
-                    summaryLong={summaryLong}
-                  />
-                </div>
-              </>
+              <div key={summaryTitle} className={classes.listElem}>
+                <DemoCard
+                  pageUrl={pageUrl}
+                  summaryImgPath={summaryImgPath}
+                  summaryTitle={summaryTitle}
+                  summaryShort={summaryShort}
+                  summaryLong={summaryLong}
+                />
+              </div>
             );
           }
         )}
