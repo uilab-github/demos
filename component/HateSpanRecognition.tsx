@@ -108,14 +108,17 @@ const HateSpanRecognition = () => {
           <div className={classes.outputTitle}> {`Analysis Result`}</div>
           <div className={classes.outputContent}>
             {outputDetail.offensiveness ? (
-              <div className={`${classes.offensiveness} ${classes.red}`}>
-                Offensive
+              <div>
+                Classification: <span className={classes.red}>Offensive </span>
               </div>
             ) : (
-              <div className={`${classes.offensiveness} ${classes.green}`}>
-                Not offensive
+              <div>
+                Classification:{' '}
+                <span className={classes.red}>Not offensive </span>
               </div>
             )}
+
+            <br />
             <div className={classes.outputMain}>{output}</div>
           </div>
         </div>

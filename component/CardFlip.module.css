@@ -31,6 +31,11 @@
 }
 
 @media only screen and (max-width: 30rem) {
+  .cardFront {
+    height: 211px;
+    align-items: center;
+  }
+
   .cardBack {
     height: 211px;
   }

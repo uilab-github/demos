@@ -46,7 +46,7 @@ const CardFrontFormatter = ({ title, comment }: TCardFrontFormatter) => (
 );
 
 type TCardBackFormatter = {
-  isAggressive?: boolean;
+  isOffensive?: boolean;
   offensiveSpan?: React.ReactNode;
   target?: string;
   targetGroup?: string;
@@ -59,14 +59,14 @@ const CardBackFormatter = ({
   targetGroup,
   taggedComment,
 }: TCardBackFormatter) => {
-  const isAggressive = offensiveSpan ? true : false;
+  const isOffensive = offensiveSpan ? true : false;
   return (
     <div className={classes.card}>
       <span>
         <span>Classification: </span>
         <br />
-        <span className={isAggressive ? classes.red : classes.green}>
-          {isAggressive ? 'Aggressive ' : 'Not aggressive '} comment
+        <span className={isOffensive ? classes.red : classes.green}>
+          {isOffensive ? 'Offensive ' : 'Not offensive '} comment
           <br />
         </span>
         <br />
@@ -135,7 +135,7 @@ const cardData: CardContent[] = [
     back: (
       <CardBackFormatter
         offensiveSpan={focusOn('이럴 줄 알았다 어디서 쌩 구라를 쳐', 0, 20)}
-        target="not specified"
+        target="Not specified"
       />
     ),
   },
