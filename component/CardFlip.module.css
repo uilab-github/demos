@@ -13,7 +13,6 @@
 .cardFront,
 .cardBack {
   display: flex;
-  background-color: rgb(240, 244, 247);
   box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px;
   flex: 1;
   width: 100%;
@@ -24,7 +23,12 @@
   padding: 24px 18px;
 }
 
+.cardFront {
+  background-color: rgb(240, 244, 247);
+}
+
 .cardBack {
+  background-color: rgb(230, 237, 241);
   border: solid 1px rgb(140, 150, 163);
   flex-direction: column;
   justify-content: center;
