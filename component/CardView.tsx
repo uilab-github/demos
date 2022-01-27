@@ -153,8 +153,8 @@ const cardData: CardContent[] = [
           20,
           33
         )}
-        target="group"
-        targetGroup="집단-종교-기독교"
+        target="[Group] Religion - Christian"
+        targetGroup=""
       />
     ),
   },
@@ -172,8 +172,8 @@ const cardData: CardContent[] = [
           6,
           40
         )}
-        target="group"
-        targetGroup="집단-기타-나이"
+        target="[Group] Others - Age"
+        targetGroup=""
       />
     ),
   },

@@ -10,7 +10,7 @@ export interface hateSpanDetailFormat {
   off_start_idx: number;
   off_end_idx: number;
   target: string;
-  taget_group: string;
+  target_group: string;
   tgt_start_idx: number;
   tgt_end_idx: number;
 }

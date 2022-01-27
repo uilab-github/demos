@@ -5,19 +5,9 @@
     "off_start_idx": 70,
     "off_end_idx": 99,
     "target": "group",
-    "target_group": "집단-정치-그 외",
+    "target_group": "[Group] Politics - Others",
     "tgt_start_idx": 35,
     "tgt_end_idx": 38
-  },
-  "국제법으로는 강대국들의 지지를 얻긴 힘들거임. 표면적으로는 지지하더라도 진짜로 힘이 되어주진않지. 왜냐하면 유럽 강대국들도 다 전쟁하고 식민지 부려먹던 나라 들이니까 ㅋㅋ": {
-    "comment": "국제법으로는 강대국들의 지지를 얻긴 힘들거임. 표면적으로는 지지하더라도 진짜로 힘이 되어주진않지. 왜냐하면 유럽 강대국들도 다 전쟁하고 식민지 부려먹던 나라 들이니까 ㅋㅋ",
-    "offensiveness": true,
-    "off_start_idx": 60,
-    "off_end_idx": 94,
-    "target": "group",
-    "target_group": "draw",
-    "tgt_start_idx": 60,
-    "tgt_end_idx": 67
   },
   "왜 동성혼 동성애를 강요하는거냐?변태 성욕을 왜 일반국민에게 강요하나? 차별금지법을 국민 대부분이 반대한다!": {
     "comment": "왜 동성혼 동성애를 강요하는거냐?변태 성욕을 왜 일반국민에게 강요하나? 차별금지법을 국민 대부분이 반대한다!",
@@ -25,7 +15,7 @@
     "off_start_idx": 0,
     "off_end_idx": 59,
     "target": "group",
-    "target_group": "집단-성적 지향-동성애자",
+    "target_group": "[Group] Sexual-orientation - Homosexual",
     "tgt_start_idx": null,
     "tgt_end_idx": null
   },
@@ -35,7 +25,7 @@
     "off_start_idx": 68,
     "off_end_idx": 128,
     "target": "group",
-    "target_group": "집단-성적 지향-동성애자",
+    "target_group": "[Group] Sexual-orientation - Homosexual",
     "tgt_start_idx": 5,
     "tgt_end_idx": 10
   },
@@ -45,7 +35,7 @@
     "off_start_idx": 91,
     "off_end_idx": 123,
     "target": "group",
-    "target_group": "집단-기타-그 외",
+    "target_group": "[Group] Others - Others",
     "tgt_start_idx": 72,
     "tgt_end_idx": 75
   },
@@ -55,29 +45,9 @@
     "off_start_idx": 21,
     "off_end_idx": 105,
     "target": "group",
-    "target_group": "집단-종교-기독교",
+    "target_group": "[Group] Religion - Christian",
     "tgt_start_idx": 24,
     "tgt_end_idx": 26
-  },
-  "이슬람은 수니파 vs 시아파 간의 어마어마한 싸움이라고만 알고있었는데 다른 시각으로 문제를 접할 수 있게 되어서 매우 감사하게 생각합니다. 13:33 보다보다 너무 화가나서 대영제국은 무슨,": {
-    "comment": "이슬람은 수니파 vs 시아파 간의 어마어마한 싸움이라고만 알고있었는데 다른 시각으로 문제를 접할 수 있게 되어서 매우 감사하게 생각합니다. 13:33 보다보다 너무 화가나서 대영제국은 무슨,",
-    "offensiveness": true,
-    "off_start_idx": 84,
-    "off_end_idx": 104,
-    "target": "group",
-    "target_group": "집단-민족, 인종, 국가-백인",
-    "tgt_start_idx": 97,
-    "tgt_end_idx": 101
-  },
-  "바보들의 행진이네 자신이 맞다고 생각하는걸. 부정한다는게 세상에서 젤힘든일이긴 하지만!!스스로에게 질문할 용기와.3자에게 질문할 용기좀 키우시고..의심을 통해 믿음을 얻길바랍니다.누군가 머라한다는건 문제가 있는거니.귀좀 열고 사세요!!": {
-    "comment": "바보들의 행진이네 자신이 맞다고 생각하는걸. 부정한다는게 세상에서 젤힘든일이긴 하지만!!스스로에게 질문할 용기와.3자에게 질문할 용기좀 키우시고..의심을 통해 믿음을 얻길바랍니다.누군가 머라한다는건 문제가 있는거니.귀좀 열고 사세요!!",
-    "offensiveness": true,
-    "off_start_idx": 0,
-    "off_end_idx": 9,
-    "target": "group",
-    "target_group": "draw",
-    "tgt_start_idx": 0,
-    "tgt_end_idx": 3
   },
   "국힘당 외부인사 들어오면 구박맛집으로 소문났는데 어느누가 들어가고싶을까 있는사람도 나가고싶게 만드는 당대표먼저 어떻게좀해보셔": {
     "comment": "국힘당 외부인사 들어오면 구박맛집으로 소문났는데 어느누가 들어가고싶을까 있는사람도 나가고싶게 만드는 당대표먼저 어떻게좀해보셔",
@@ -85,7 +55,7 @@
     "off_start_idx": 14,
     "off_end_idx": 68,
     "target": "group",
-    "target_group": "집단-정치-보수",
+    "target_group": "[Group] Politics - Conservative",
     "tgt_start_idx": 0,
     "tgt_end_idx": 4
   },
@@ -95,7 +65,7 @@
     "off_start_idx": 65,
     "off_end_idx": 108,
     "target": "group",
-    "target_group": "집단-성 정체성-여성",
+    "target_group": "[Group] Gender - Female",
     "tgt_start_idx": 84,
     "tgt_end_idx": 86
   },
@@ -115,7 +85,7 @@
     "off_start_idx": 17,
     "off_end_idx": 57,
     "target": "group",
-    "target_group": "집단-기타-그 외",
+    "target_group": "[Group] Others - Others",
     "tgt_start_idx": 29,
     "tgt_end_idx": 34
   },
@@ -125,7 +95,7 @@
     "off_start_idx": 14,
     "off_end_idx": 23,
     "target": "group",
-    "target_group": "집단-기타-그 외",
+    "target_group": "[Group] Others - Others",
     "tgt_start_idx": 0,
     "tgt_end_idx": 5
   },
@@ -135,7 +105,7 @@
     "off_start_idx": 23,
     "off_end_idx": 106,
     "target": "group",
-    "target_group": "집단-성 정체성-페미니스트",
+    "target_group": "[Group] Gender - Feminist",
     "tgt_start_idx": 19,
     "tgt_end_idx": 22
   },
@@ -145,7 +115,7 @@
     "off_start_idx": 62,
     "off_end_idx": 92,
     "target": "group",
-    "target_group": "집단-성적 지향-동성애자",
+    "target_group": "[Group] Sexual-orientation - Homosexual",
     "tgt_start_idx": 0,
     "tgt_end_idx": 5
   },
@@ -155,7 +125,7 @@
     "off_start_idx": 55,
     "off_end_idx": 80,
     "target": "group",
-    "target_group": "집단-기타-그 외",
+    "target_group": "[Group] Others - Others",
     "tgt_start_idx": 58,
     "tgt_end_idx": 62
   },
@@ -165,7 +135,7 @@
     "off_start_idx": 0,
     "off_end_idx": 25,
     "target": "group",
-    "target_group": "집단-성 정체성-여성",
+    "target_group": "[Group] Gender - Female",
     "tgt_start_idx": 5,
     "tgt_end_idx": 8
   },
@@ -175,7 +145,7 @@
     "off_start_idx": 0,
     "off_end_idx": 16,
     "target": "group",
-    "target_group": "집단-정치-진보",
+    "target_group": "[Gruop] Politics - Progressive",
     "tgt_start_idx": 0,
     "tgt_end_idx": 4
   },
@@ -185,7 +155,7 @@
     "off_start_idx": 0,
     "off_end_idx": 25,
     "target": "group",
-    "target_group": "집단-성 정체성-젠더퀴어",
+    "target_group": "[Group] Gernder - Genderqueer",
     "tgt_start_idx": 0,
     "tgt_end_idx": 5
   }

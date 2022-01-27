@@ -10,6 +10,18 @@ import {
 } from 'data/hateSpanLoader';
 import { ClipLoader } from 'react-spinners';
 
+const getTargetGroup = (detail: hateSpanDetailFormat) => {
+  const capitalizeFirstCaracterAfterGroup = (str: string) => {
+    return str.slice(0, 8) + str.charAt(8).toUpperCase() + str.slice(9);
+  };
+
+  if (detail.target !== 'group') {
+    return capitalizeFirstCaracterAfterGroup(detail.target);
+  } else {
+    return capitalizeFirstCaracterAfterGroup(detail.target_group);
+  }
+};
+
 import WordTagSentence, { Tposition } from './WordTagSentence';
 
 const HateSpanRecognition = () => {
@@ -116,6 +128,16 @@ const HateSpanRecognition = () => {
                 Classification:{' '}
                 <span className={classes.red}>Not offensive </span>
               </div>
+            )}
+            {outputDetail.target ? (
+              <div>
+                Target:{' '}
+                <span className={classes.blue}>
+                  {getTargetGroup(outputDetail)}{' '}
+                </span>
+              </div>
+            ) : (
+              <div></div>
             )}
 
             <br />
