@@ -1,10 +1,10 @@
-# FROM       ubuntu:18.04
-# MAINTAINER quark325@gmail.com
-# RUN        apt-get -y update
-
-
-# RUN apt-get -y install git
-# RUN 
+# Make Docker Image Command
+# docker build --tag {id}/uilab_demo:1.0 .
+# After make repository in docker hub
+# docker push {id}/uilab_demo:1.0
+# In the server that you want to run demo service,
+# docker pull {id}/uilab_demo:1.0
+# docker run -d -p 80:80 {id}/uilab_demo:1.0
 
 FROM       node:12
 MAINTAINER quark325@gmail.com
